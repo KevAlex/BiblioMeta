@@ -1,13 +1,14 @@
 import React, { ChangeEvent } from "react";
 
-export type TextInputProps = {
+type TextInputProps = {
   label?: string;
   type?: "number" | "password" | "text";
   classN?: string;
+  name: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-function TextInput({ label, onChange, type, classN }: TextInputProps) {
+function TextInput({ label, onChange, type, classN, name }: TextInputProps) {
   return (
     <label>
       {}
@@ -16,6 +17,7 @@ function TextInput({ label, onChange, type, classN }: TextInputProps) {
         onChange={onChange}
         placeholder={label}
         type={type}
+        name={name}
       />
     </label>
   );
