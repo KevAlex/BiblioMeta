@@ -10,7 +10,7 @@ type TextInputProps = {
 
 function TextInput({ label, onChange, type, classN, name }: TextInputProps) {
   return (
-    <label>
+    <label className="h-75">
       {}
       <input
         className={classN}

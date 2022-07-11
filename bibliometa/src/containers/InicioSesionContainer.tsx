@@ -4,7 +4,6 @@ import InicioSesion from "../components/Forms/InicioSesion";
 function InicioSesionContainer() {
   return (
     <>
-      Bienvenido a BiblioMeta...
       <InicioSesion referencia="/ss" />
     </>
   );
