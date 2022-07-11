@@ -1,12 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+//import logo from './logo.svg';
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -20,8 +20,8 @@ function App() {
         </a>
 
         <div className="alert alert-info" role="alert">
-  A simple info alert—check it out!
-</div>
+          A simple info alert—check it out!
+        </div>
       </header>
     </div>
   );
