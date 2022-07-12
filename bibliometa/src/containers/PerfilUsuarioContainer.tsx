@@ -4,7 +4,6 @@ import PerfilUsuario from "../components/Usuario/PerfilUsuario";
 function PerfilUsuarioContainer() {
   return (
     <>
-      Peril de usuario...
       <PerfilUsuario />
     </>
   );
