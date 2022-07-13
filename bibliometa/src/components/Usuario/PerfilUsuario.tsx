@@ -2,7 +2,7 @@ import React from "react";
 import Perfil from "../../images/Perfil.png";
 function PerfilUsuario() {
   return (
-    <div className="d-flex flex-row">
+    <div className="d-flex flex-row mt-4">
       <div className="me-4">
         <div className="d-flex flex-col">
           <div className="me-4">

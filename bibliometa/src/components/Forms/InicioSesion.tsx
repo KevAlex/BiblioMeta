@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
-
+import BiblioLogo from "../../images/Logo_horizontal2-sf.png";
 type Values = {
   name: string;
   password: string;
@@ -27,8 +27,11 @@ function InicioSesion({ referencia }: VariableGlobal) {
   };
 
   return (
-    <div className="d-flex flex-column mt-4 ">
+    <div className="d-flex flex-column align-items-center mt-4 ">
       <div>
+        <img src={BiblioLogo} width="270" height="90"></img>
+      </div>
+      <div className="">
         <h1>Inicia Sesión en BiblioMeta</h1>
       </div>
       <div className="">
