@@ -1,7 +1,11 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, useContext, useState } from "react";
 import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
 import BiblioLogo from "../../images/Logo_horizontal2-sf.png";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebasebd/firebase";
+import { AuthContext } from "../BD/Auth";
+
 type Values = {
   name: string;
   password: string;
@@ -24,7 +28,19 @@ function InicioSesion({ referencia }: VariableGlobal) {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(values);
+
+    try {
+      signInWithEmailAndPassword(auth, values.name, values.password);
+    } catch (error) {
+      alert(error);
+    }
   };
+
+  const { currentUser } = useContext(AuthContext);
+
+  if (currentUser) {
+    <h1>Hola</h1>;
+  }
 
   return (
     <div className="d-flex flex-column align-items-center mt-4 ">

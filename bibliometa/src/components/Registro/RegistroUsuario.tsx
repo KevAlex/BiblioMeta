@@ -20,6 +20,8 @@ function RegistroUsuario({ referencia }: VariableGlobal) {
     password: "",
   });
 
+  const [currentUser, setCurrentUser] = useState<boolean>(false);
+
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
@@ -27,14 +29,22 @@ function RegistroUsuario({ referencia }: VariableGlobal) {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(values);
+    try {
+      createUserWithEmailAndPassword(auth, values.name, values.password);
+      setCurrentUser(true);
+    } catch (error) {
+      alert(error);
+    }
 
-    createUserWithEmailAndPassword(auth, values.name, values.password)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => console.log(err.message));
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((err) => console.log(err.message));
   };
 
+  //   if(currentUser){
+  //     <h1>Hola</h1>
+  // }
   return (
     <div className="d-flex flex-column align-items-center mt-4 ">
       <div>
