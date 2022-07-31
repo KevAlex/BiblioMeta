@@ -1,9 +1,6 @@
 import React from "react";
 //import logo from './logo.svg';
 import "./App.css";
-import InicioSesionContainer from "./containers/InicioSesionContainer";
-import PerfilUsuarioContainer from "./containers/PerfilUsuarioContainer";
-import ContactoContainer from "./containers/ContactoContainer";
 
 function App() {
   return (
