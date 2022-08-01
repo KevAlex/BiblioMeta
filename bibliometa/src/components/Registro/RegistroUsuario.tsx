@@ -4,6 +4,7 @@ import TextInput from "../TextInput/TextInput";
 import BiblioLogo from "../../images/Logo_horizontal2-sf.png";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebasebd/firebase";
+import { Navigate } from "react-router-dom";
 
 type Values = {
   name: string;
@@ -42,9 +43,10 @@ function RegistroUsuario({ referencia }: VariableGlobal) {
     //   .catch((err) => console.log(err.message));
   };
 
-  //   if(currentUser){
-  //     <h1>Hola</h1>
-  // }
+  if (currentUser) {
+    return <Navigate to="/login" />;
+  }
+
   return (
     <div className="d-flex flex-column align-items-center mt-4 ">
       <div>

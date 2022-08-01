@@ -5,6 +5,7 @@ import BiblioLogo from "../../images/Logo_horizontal2-sf.png";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebasebd/firebase";
 import { AuthContext } from "../BD/Auth";
+import { Navigate } from "react-router-dom";
 
 type Values = {
   name: string;
@@ -39,7 +40,7 @@ function InicioSesion({ referencia }: VariableGlobal) {
   const { currentUser } = useContext(AuthContext);
 
   if (currentUser) {
-    <h1>Hola</h1>;
+    return <Navigate to="/contact" />;
   }
 
   return (
