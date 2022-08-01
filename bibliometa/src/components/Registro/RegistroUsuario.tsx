@@ -2,9 +2,17 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
 import BiblioLogo from "../../images/Logo_horizontal2-sf.png";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebasebd/firebase";
+import { auth, db } from "../../firebasebd/firebase";
 import { Navigate } from "react-router-dom";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
+
+import { getFirestore, addDoc, collection } from "firebase/firestore";
+// const db = getFirestore();
+// const auth = getAuth();
 
 type Values = {
   name: string;
@@ -27,12 +35,20 @@ function RegistroUsuario({ referencia }: VariableGlobal) {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(values);
     try {
-      createUserWithEmailAndPassword(auth, values.name, values.password);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        values.name,
+        values.password
+      );
       setCurrentUser(true);
+      await addDoc(collection(db, "users"), {
+        uid: userCredential.user.uid,
+        email: userCredential.user.email,
+      });
     } catch (error) {
       alert(error);
     }
@@ -43,9 +59,9 @@ function RegistroUsuario({ referencia }: VariableGlobal) {
     //   .catch((err) => console.log(err.message));
   };
 
-  if (currentUser) {
-    return <Navigate to="/login" />;
-  }
+  // if (currentUser) {
+  //   return <Navigate to="/login" />;
+  // }
 
   return (
     <div className="d-flex flex-column align-items-center mt-4 ">

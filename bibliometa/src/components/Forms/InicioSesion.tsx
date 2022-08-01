@@ -2,10 +2,15 @@ import React, { ChangeEvent, FormEvent, useContext, useState } from "react";
 import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
 import BiblioLogo from "../../images/Logo_horizontal2-sf.png";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebasebd/firebase";
-import { AuthContext } from "../BD/Auth";
+import { auth, db } from "../../firebasebd/firebase";
 import { Navigate } from "react-router-dom";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
+
+import { getFirestore, addDoc, collection } from "firebase/firestore";
 
 type Values = {
   name: string;
@@ -26,22 +31,28 @@ function InicioSesion({ referencia }: VariableGlobal) {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(values);
 
     try {
-      signInWithEmailAndPassword(auth, values.name, values.password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        values.name,
+        values.password
+      );
+
+      const user = userCredential.user;
     } catch (error) {
       alert(error);
     }
   };
 
-  const { currentUser } = useContext(AuthContext);
+  // const { currentUser } = useContext(AuthContext);
 
-  if (currentUser) {
-    return <Navigate to="/contact" />;
-  }
+  // if (currentUser) {
+  //   return <Navigate to="/contact" />;
+  // }
 
   return (
     <div className="d-flex flex-column align-items-center mt-4 ">
