@@ -32,10 +32,11 @@ export default class NavbarComp extends Component {
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               >
-                <Nav.Link href="#action1">Libros</Nav.Link>
-                <Nav.Link href="#action2">Promociones</Nav.Link>
+                <Nav.Link href="/inicio">Libros</Nav.Link>
                 <Nav.Link href="#action3">Alquiler</Nav.Link>
                 <Nav.Link href="#action4">Venta</Nav.Link>
+                <Nav.Link href="/perfil">Mi perfil</Nav.Link>
+                <Nav.Link href="/contact">Contactanos</Nav.Link>
               </Nav>
 
               <Form className="d-flex">
