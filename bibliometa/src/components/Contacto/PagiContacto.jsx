@@ -6,10 +6,10 @@ import { AuthContext } from "../BD/Auth";
 import { Navigate } from "react-router-dom";
 
 function PagiContacto() {
-  const { currentUser } = useContext(AuthContext);
-  if (!currentUser) {
-    return <Navigate to="/login" />;
-  }
+  // const { currentUser } = useContext(AuthContext);
+  // if (!currentUser) {
+  //   return <Navigate to="/login" />;
+  // }
   return (
     <div>
       <header>
