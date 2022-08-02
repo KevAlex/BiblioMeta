@@ -1,0 +1,17 @@
+.gridLibros {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 230px);
+  gap: 40px;
+  padding: 40px;
+  justify-content: center;
+  background-color: black;
+  color: white;
+}
+
+@media (max-width: 560px) {
+  .gridLibros {
+    grid-template-columns: 100%;
+    background-color: black;
+    color: white;
+  }
+}
