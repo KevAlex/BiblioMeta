@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useContext, useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
 import BiblioLogo from "../../images/Logo_horizontal2-sf.png";
@@ -11,6 +11,8 @@ import {
 } from "firebase/auth";
 
 import { getFirestore, addDoc, collection } from "firebase/firestore";
+// const db = getFirestore();
+// const auth = getAuth();
 
 type Values = {
   name: string;
@@ -21,11 +23,13 @@ type VariableGlobal = {
   referencia: string;
 };
 
-function InicioSesion({ referencia }: VariableGlobal) {
+function RegistroUsuario({ referencia }: VariableGlobal) {
   const [values, setValues] = useState<Values>({
     name: "",
     password: "",
   });
+
+  const [currentUser, setCurrentUser] = useState<boolean>(false);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValues({ ...values, [event.target.name]: event.target.value });
@@ -34,24 +38,29 @@ function InicioSesion({ referencia }: VariableGlobal) {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(values);
-
     try {
-      const userCredential = await signInWithEmailAndPassword(
+      const userCredential = await createUserWithEmailAndPassword(
         auth,
         values.name,
         values.password
       );
-
-      const user = userCredential.user;
+      setCurrentUser(true);
+      await addDoc(collection(db, "users"), {
+        uid: userCredential.user.uid,
+        email: userCredential.user.email,
+      });
     } catch (error) {
       alert(error);
     }
+
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((err) => console.log(err.message));
   };
 
-  // const { currentUser } = useContext(AuthContext);
-
   // if (currentUser) {
-  //   return <Navigate to="/contact" />;
+  //   return <Navigate to="/login" />;
   // }
 
   return (
@@ -60,7 +69,7 @@ function InicioSesion({ referencia }: VariableGlobal) {
         <img src={BiblioLogo} width="270" height="90"></img>
       </div>
       <div className="">
-        <h1>Inicia Sesión en BiblioMeta</h1>
+        <h1>Registra Sesión en BiblioMeta</h1>
       </div>
       <div className="">
         <form className="" onSubmit={(e) => handleSubmit(e)}>
@@ -94,7 +103,7 @@ function InicioSesion({ referencia }: VariableGlobal) {
               </a>
             </div>
             <div className="mt-4">
-              <Button text="Iniciar sesion" type="submit" classN="p-2" />
+              <Button text="Registrarme" type="submit" classN="p-2" />
             </div>
           </div>
         </form>
@@ -103,4 +112,4 @@ function InicioSesion({ referencia }: VariableGlobal) {
   );
 }
 
-export default InicioSesion;
+export default RegistroUsuario;

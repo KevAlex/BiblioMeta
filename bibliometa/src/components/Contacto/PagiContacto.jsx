@@ -1,12 +1,19 @@
 import styles from "./PagiContacto.module.css";
 import Logo_img from "../../images/Lectores.png";
 import NavbarComp from "../NabvarM/NavbarComp";
+import { useContext } from "react";
+import { AuthContext } from "../BD/Auth";
+import { Navigate } from "react-router-dom";
 
 function PagiContacto() {
+  const { currentUser } = useContext(AuthContext);
+  if (!currentUser) {
+    return <Navigate to="/login" />;
+  }
   return (
     <div>
       <header>
-        <NavbarComp/>
+        <NavbarComp />
       </header>
       <main>
         <div>
