@@ -27,3 +27,4 @@
 # Instalar dependencias
 - npm install to-fast-properties
 - npm install --save styled-components
+- npm i --save-dev @types/styled-components
