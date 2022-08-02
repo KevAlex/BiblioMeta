@@ -22,3 +22,7 @@
 
 - npm install react-router-dom
 - npm install --save-dev @types/react-router-dom (for TS)
+
+# Instalar dependencias
+- npm install to-fast-properties
+- npm install --save styled-components
