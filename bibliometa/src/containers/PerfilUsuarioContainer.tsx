@@ -9,6 +9,16 @@ function PerfilUsuarioContainer() {
         <NavbarComp />
       </header>
       <PerfilUsuario />
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }

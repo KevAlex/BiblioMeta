@@ -68,7 +68,7 @@ function InicioSesion({ referencia }: VariableGlobal) {
           <div className="d-flex flex-column justify-content-center align-items-center">
             <div className="mt-2 h-100">
               <TextInput
-                classN="h-75 flex-grow-1 p-2"
+                classN="h-75 flex-grow-1 p-2 form-control"
                 type="text"
                 label="Inserte su usuario"
                 onChange={handleChange}
@@ -77,7 +77,7 @@ function InicioSesion({ referencia }: VariableGlobal) {
             </div>
             <div className="mt-2 mb-2">
               <TextInput
-                classN="h-75 p-2"
+                classN="h-75 p-2 form-control"
                 type="password"
                 label="Inserte su contraseña"
                 onChange={handleChange}

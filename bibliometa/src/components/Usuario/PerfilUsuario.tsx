@@ -25,7 +25,10 @@ function PerfilUsuario() {
             <a href="#" className="list-group-item list-group-item-action">
               Historial de compras
             </a>
-            <a href="#" className="list-group-item list-group-item-action">
+            <a
+              href="/signup"
+              className="list-group-item list-group-item-action"
+            >
               Cerrar sesión
             </a>
           </div>

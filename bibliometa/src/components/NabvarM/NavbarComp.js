@@ -34,7 +34,7 @@ export default class NavbarComp extends Component {
               >
                 <Nav.Link href="/inicio">Libros</Nav.Link>
                 <Nav.Link href="#action3">Alquiler</Nav.Link>
-                <Nav.Link href="#action4">Venta</Nav.Link>
+                <Nav.Link href="/login">Inicio sesión</Nav.Link>
                 <Nav.Link href="/perfil">Mi perfil</Nav.Link>
                 <Nav.Link href="/contact">Contactanos</Nav.Link>
               </Nav>

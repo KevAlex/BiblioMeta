@@ -7,19 +7,17 @@ import {
   FooterLink,
   Heading,
 } from "./footerstyle";
-  
+
 const Footer = () => {
   return (
     <Box>
-      <h1 style={{ color: "#93AD54", 
-                   textAlign: "center", 
-                   marginTop: "-30px" }}>
+      <h1 style={{ color: "#93AD54", textAlign: "center", marginTop: "-30px" }}>
         BiblioMeta
       </h1>
       <Container>
         <Row>
           <Column>
-            <Heading>A cerca de BiblioMeta</Heading>
+            <Heading>Acerca de BiblioMeta</Heading>
             <FooterLink href="#">Misión</FooterLink>
             <FooterLink href="#">Visión</FooterLink>
           </Column>
@@ -37,30 +35,22 @@ const Footer = () => {
             <Heading>Redes sociales</Heading>
             <FooterLink href="#">
               <i className="fab fa-facebook-f">
-                <span style={{ marginLeft: "10px" }}>
-                  Facebook
-                </span>
+                <span style={{ marginLeft: "10px" }}>Facebook</span>
               </i>
             </FooterLink>
             <FooterLink href="#">
               <i className="fab fa-instagram">
-                <span style={{ marginLeft: "10px" }}>
-                  Instagram
-                </span>
+                <span style={{ marginLeft: "10px" }}>Instagram</span>
               </i>
             </FooterLink>
             <FooterLink href="#">
               <i className="fab fa-twitter">
-                <span style={{ marginLeft: "10px" }}>
-                  Twitter
-                </span>
+                <span style={{ marginLeft: "10px" }}>Twitter</span>
               </i>
             </FooterLink>
             <FooterLink href="#">
               <i className="fab fa-youtube">
-                <span style={{ marginLeft: "10px" }}>
-                  Youtube
-                </span>
+                <span style={{ marginLeft: "10px" }}>Youtube</span>
               </i>
             </FooterLink>
           </Column>

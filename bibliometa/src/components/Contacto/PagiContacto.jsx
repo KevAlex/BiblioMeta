@@ -4,6 +4,8 @@ import NavbarComp from "../NabvarM/NavbarComp";
 import { useContext } from "react";
 import { AuthContext } from "../BD/Auth";
 import { Navigate } from "react-router-dom";
+import Footer from "../Footer/footer";
+import Button from "../Button/Button";
 
 function PagiContacto() {
   // const { currentUser } = useContext(AuthContext);
@@ -114,6 +116,19 @@ function PagiContacto() {
                     </div>
                   </div>
                 </div>
+
+                <div className="mt-4 "></div>
+                <div className="container text-center">
+                  <div className="row">
+                    <div className="col">
+                      <Button
+                        text="Enviar peticion"
+                        type="submit"
+                        classN="p-2 btn btn-primary"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -122,6 +137,9 @@ function PagiContacto() {
           <br />
         </div>
       </main>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </div>
   );
 }

@@ -4,11 +4,10 @@ import styles from "./GridLibros.module.css";
 
 export function GridLibros() {
   return (
-    <ul className = {styles.gridLibros}>
+    <ul className={styles.gridLibros}>
       {libros.map((libro) => (
-        <ItemTarjeta key={libro.id} libro={libro}/>
+        <ItemTarjeta key={libro.id} libro={libro} />
       ))}
     </ul>
   );
 }
-

@@ -11,6 +11,7 @@ import {
 } from "firebase/auth";
 
 import { getFirestore, addDoc, collection } from "firebase/firestore";
+import { Link } from "react-router-dom";
 // const db = getFirestore();
 // const auth = getAuth();
 
@@ -76,16 +77,16 @@ function RegistroUsuario({ referencia }: VariableGlobal) {
           <div className="d-flex flex-column justify-content-center align-items-center">
             <div className="mt-2 h-100">
               <TextInput
-                classN="h-75 flex-grow-1 p-2"
+                classN="h-75 flex-grow-1 p-2 form-control"
                 type="text"
-                label="Inserte su usuario"
+                label="Inserte su Email"
                 onChange={handleChange}
                 name={"name"}
               />
             </div>
             <div className="mt-2 mb-2">
               <TextInput
-                classN="h-75 p-2"
+                classN="h-75 p-2 form-control"
                 type="password"
                 label="Inserte su contraseña"
                 onChange={handleChange}
@@ -98,12 +99,19 @@ function RegistroUsuario({ referencia }: VariableGlobal) {
                 href={referencia}
                 target="_blank"
                 rel="noopener noreferrer"
-              >
-                ¿Olvidaste tu contraseña?
-              </a>
+              ></a>
             </div>
             <div className="mt-4">
-              <Button text="Registrarme" type="submit" classN="p-2" />
+              <Button
+                text="Registrarme"
+                type="submit"
+                classN="p-2 btn btn-primary"
+              />
+            </div>
+            <div className="mt-2">
+              <Link to="/login" className="btn btn-primary">
+                Inicia sesión
+              </Link>
             </div>
           </div>
         </form>
