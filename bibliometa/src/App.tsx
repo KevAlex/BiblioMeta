@@ -7,6 +7,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import InicioSesionContainer from "./containers/InicioSesionContainer";
 import ContactoContainer from "./containers/ContactoContainer";
 import PlayContainer from "./containers/DummyContainer";
+import PerfilUsuarioContainer from "./containers/PerfilUsuarioContainer";
+import GrillaLibrosContainer from "./containers/GrillaLibrosContainer";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
             path="/signup"
             element={<RegistroUsuario referencia="/ss" />}
           />
+          <Route path="/perfil" element={<PerfilUsuarioContainer />} />
+          <Route path="/inicio" element={<GrillaLibrosContainer />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
