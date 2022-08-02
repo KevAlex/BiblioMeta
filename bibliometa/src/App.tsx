@@ -17,7 +17,6 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-          <Route path="/" element={<ContactoContainer />} />
           <Route path="/login" element={<InicioSesionContainer />} />
           <Route path="/contact" element={<ContactoContainer />} />
           <Route
