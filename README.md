@@ -21,8 +21,10 @@
 # Instalando Routing
 
 - npm install react-router-dom
+- npm install react-router-dom@6
 - npm install --save-dev @types/react-router-dom (for TS)
 
 # Instalar dependencias
 - npm install to-fast-properties
 - npm install --save styled-components
+- npm i --save-dev @types/styled-components

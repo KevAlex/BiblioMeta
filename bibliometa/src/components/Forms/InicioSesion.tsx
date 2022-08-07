@@ -11,6 +11,7 @@ import {
 } from "firebase/auth";
 
 import { getFirestore, addDoc, collection } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 type Values = {
   name: string;
@@ -94,7 +95,10 @@ function InicioSesion({ referencia }: VariableGlobal) {
               </a>
             </div>
             <div className="mt-4">
-              <Button text="Iniciar sesion" type="submit" classN="p-2" />
+              {/* <Button text="Iniciar sesion" type="submit" classN="p-2" /> */}
+              <Link to="/inicio" className="btn btn-primary">
+                Inicia sesión
+              </Link>
             </div>
           </div>
         </form>
