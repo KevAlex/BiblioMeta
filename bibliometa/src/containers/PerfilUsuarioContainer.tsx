@@ -8,7 +8,9 @@ function PerfilUsuarioContainer() {
       <header>
         <NavbarComp />
       </header>
-      <PerfilUsuario />
+      <main><PerfilUsuario /></main>
+      
+      <footer><Footer/></footer>
     </>
   );
 }

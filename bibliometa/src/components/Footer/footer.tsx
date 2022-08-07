@@ -10,6 +10,7 @@ import {
   
 const Footer = () => {
   return (
+    <div>
     <Box>
       <h1 style={{ color: "#93AD54", 
                    textAlign: "center", 
@@ -67,6 +68,7 @@ const Footer = () => {
         </Row>
       </Container>
     </Box>
+    </div>
   );
 };
 export default Footer;
