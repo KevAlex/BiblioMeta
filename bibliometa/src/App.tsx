@@ -2,7 +2,7 @@ import React from "react";
 //import logo from './logo.svg';
 import "./App.css";
 import { AuthProvider } from "./components/BD/Auth";
-import RegistroUsuario from "./components/Registro/RegistroUsuario";
+import RegistrodeUsuarios from "./components/Registro/RegistrodeUsuarios";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import InicioSesionContainer from "./containers/InicioSesionContainer";
 import ContactoContainer from "./containers/ContactoContainer";
@@ -18,12 +18,11 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-
           <Route path="/login" element={<InicioSesionContainer />} />
           <Route path="/contact" element={<ContactoContainer />} />
           <Route
             path="/signup"
-            element={<RegistroUsuario referencia="/ss" />}
+            element={<RegistrodeUsuarios referencia="/ss" />}
           />
           <Route path="/perfil" element={<PerfilUsuarioContainer />} />
           <Route path="/" element={<GrillaLibrosContainer />} />

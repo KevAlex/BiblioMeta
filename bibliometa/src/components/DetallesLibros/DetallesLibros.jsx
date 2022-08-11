@@ -38,8 +38,8 @@ export function DetallesLibros() {
           <strong>Año:</strong> {xdlibro.year}
         </p>
 
-        {xdlibro.alquiler === "si" ? <Button variant="success">Alquilar</Button> : <></>}
-        {xdlibro.venta === "si" ? <Button variant="info">Comprar</Button> : <></>}
+        {xdlibro.alquiler === "si" ? <Button variant="success" style={{width:"100px", margin:"50px", }}>Alquilar</Button> : <></>}
+        {xdlibro.venta === "si" ? <Button variant="info" style={{width:"100px", margin:"50px", }}>Comprar</Button> : <></>}
 
       </div>
     </div>
