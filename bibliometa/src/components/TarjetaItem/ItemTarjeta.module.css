@@ -6,6 +6,12 @@
 
 }
 
+.itemTarjeta:hover{
+
+  opacity: 0.8;
+
+}
+
 .itemImagen{
 
     border-radius: 10px;

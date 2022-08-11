@@ -1,0 +1,42 @@
+.contenedorDetalles{
+
+    color:white;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.col{
+
+    max-width: 400px;
+    width: 80%;
+    margin: 15px;
+    height: auto;
+    height: 80%;
+
+}
+
+.imagenLibro{
+
+    border-radius: 15px;
+
+}
+
+.detallesLibro{
+
+    font-size: 1.5rem;
+
+}
+
+.primero{
+
+    margin-top: 0;
+
+}
+
+p{
+
+    color: white;
+
+}

@@ -9,6 +9,7 @@ import ContactoContainer from "./containers/ContactoContainer";
 import PlayContainer from "./containers/DummyContainer";
 import PerfilUsuarioContainer from "./containers/PerfilUsuarioContainer";
 import GrillaLibrosContainer from "./containers/GrillaLibrosContainer";
+import DetallesLibros from "./components/DetallesLibros/DetallesLibros";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
+
           <Route path="/login" element={<InicioSesionContainer />} />
           <Route path="/contact" element={<ContactoContainer />} />
           <Route
@@ -24,10 +26,13 @@ function App() {
             element={<RegistroUsuario referencia="/ss" />}
           />
           <Route path="/perfil" element={<PerfilUsuarioContainer />} />
-          <Route path="/inicio" element={<GrillaLibrosContainer />} />
+          <Route path="/" element={<GrillaLibrosContainer />} />
+          <Route path="/inicio/:id" element={<DetallesLibros />} />
+          
         </Routes>
       </AuthProvider>
     </BrowserRouter>
+
   );
 }
 
