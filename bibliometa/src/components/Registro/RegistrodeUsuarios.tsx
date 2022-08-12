@@ -16,7 +16,12 @@ import { getFirestore, addDoc, collection } from "firebase/firestore";
 
 type Values = {
   name: string;
+  lname: string;
   password: string;
+  email: string;
+  phone: string;
+  ID: string;
+
 };
 
 type VariableGlobal = {
@@ -27,6 +32,10 @@ function RegistrodeUsuarios({ referencia }: VariableGlobal) {
   const [values, setValues] = useState<Values>({
     name: "",
     password: "",
+    lname: "",
+    phone: "",
+    ID: "",
+    email: ""
   });
 
   const [currentUser, setCurrentUser] = useState<boolean>(false);
@@ -42,7 +51,7 @@ function RegistrodeUsuarios({ referencia }: VariableGlobal) {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         values.name,
-        values.password
+        values.email,
       );
       setCurrentUser(true);
       await addDoc(collection(db, "users"), {
@@ -73,10 +82,46 @@ function RegistrodeUsuarios({ referencia }: VariableGlobal) {
         <h1>Regístrate en BiblioMeta</h1>
       </div>
       <br></br>
-      <div className="">
-        <form className="" onSubmit={(e) => handleSubmit(e)}>
-          <div className="d-flex flex-column justify-content-center align-items-center">
-            <div className="mt-2 h-100">
+      <form className="" onSubmit={(e) => handleSubmit(e)}>
+      <div className="form-row">
+          <div className="">
+            <div className="col-md-4 mb-3">
+              <TextInput
+                classN="h-75 flex-grow-1 p-2"
+                type="text"
+                label="Ingrese sus nombres"
+                onChange={handleChange}
+                name={"name"}
+              />
+            </div>
+            <div className="col-md-4 mb-3">
+              <TextInput
+                classN="h-75 p-2"
+                type="password"
+                label="Ingrese sus apellidos"
+                onChange={handleChange}
+                name={"lname"}
+              />
+            </div>
+            <div className="col-md-4 mb-3">
+              <TextInput
+                classN="h-75 flex-grow-1 p-2"
+                type="text"
+                label="Ingrese su email"
+                onChange={handleChange}
+                name={"email"}
+              />
+            </div>
+            <div className="col-md-4 mb-3">
+              <TextInput
+                classN="h-75 flex-grow-1 p-2"
+                type="text"
+                label="Ingrese su número de ID"
+                onChange={handleChange}
+                name={"id"}
+              />
+            </div>
+            <div className="col-md-4 mb-3">
               <TextInput
                 classN="h-75 flex-grow-1 p-2"
                 type="text"
@@ -85,32 +130,24 @@ function RegistrodeUsuarios({ referencia }: VariableGlobal) {
                 name={"name"}
               />
             </div>
-            <div className="mt-2 mb-2">
+            <div className="col-md-4 mb-3">
               <TextInput
-                classN="h-75 p-2"
-                type="password"
-                label="Inserte su contraseña"
+                classN="h-75 flex-grow-1 p-2"
+                type="text"
+                label="Ingrese su número de teléfono"
                 onChange={handleChange}
-                name={"password"}
+                name={"phone"}
               />
             </div>
-            <br></br>
-            <div>
-              <a
-                className="App-link "
-                href={referencia}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ¿Olvidaste tu contraseña?
-              </a>
-            </div>
-            <div className="mt-4">
-              <Button variant="success"  className="p-2">Registrarme</Button>
+            <div className="" >
+              <button className="btn btn-primary" style={{ margin: "0",
+                  position: "relative",
+                  top: "50%",
+                  left: "20%"}} type="submit">Resgistrarme</button>
             </div>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   );
 }
