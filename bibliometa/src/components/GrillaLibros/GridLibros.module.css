@@ -17,7 +17,7 @@ body{
 @media (max-width: 560px) {
   .gridLibros {
     grid-template-columns: 100%;
-    background-color: black;
+    background-color: white;
     color: white;
   }
 }
