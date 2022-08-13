@@ -10,6 +10,8 @@ import PlayContainer from "./containers/DummyContainer";
 import PerfilUsuarioContainer from "./containers/PerfilUsuarioContainer";
 import GrillaLibrosContainer from "./containers/GrillaLibrosContainer";
 import DetallesLibros from "./components/DetallesLibros/DetallesLibros";
+import VentanaPago from "./components/VentanaPago/VentanaPago";
+import librojson from "./informacion/libros.json";
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
           <Route path="/perfil" element={<PerfilUsuarioContainer />} />
           <Route path="/" element={<GrillaLibrosContainer />} />
           <Route path="/inicio/:id" element={<DetallesLibros />} />
+          <Route path="/ventanapagos" element={<VentanaPago libro={librojson}/>} />
           
         </Routes>
       </AuthProvider>

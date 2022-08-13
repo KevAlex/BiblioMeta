@@ -14,28 +14,37 @@
     margin: 15px;
     height: auto;
     height: 80%;
+    color: white;
 
 }
 
 .imagenLibro{
 
     border-radius: 15px;
+    color: white;
 
 }
 
 .detallesLibro{
 
     font-size: 1.5rem;
+    color: white;
 
 }
 
 .primero{
 
     margin-top: 0;
+    color: white;
 
 }
 
 p{
+
+    color: white;
+
+}
+.pColor{
 
     color: white;
 

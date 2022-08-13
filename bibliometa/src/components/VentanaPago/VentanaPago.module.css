@@ -1,0 +1,107 @@
+p {
+  text-align: center;
+  color: black;
+  font-family: Arial;
+  font-style: italic;
+  font-size: 120%;
+}
+
+.imagen {
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin: auto;
+}
+
+.imagen2 {
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin: auto;
+}
+
+input {
+  text-align: "center";
+  justify-content: center;
+}
+
+.main {
+  /* background-image: url("../../images/FondoPaginaContacto.jpg"); */
+  background-color: coral;
+}
+
+.texto {
+  color: black;
+  font-family: Arial;
+  font-style: italic;
+  font-size: 120%;
+}
+
+.titulo {
+  font-family: Arial;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 220%;
+  color: black;
+  /* -webkit-text-stroke: 1px black ; */
+}
+
+.titulo2 {
+  font-family: Arial;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 70%;
+  color: black;
+  /* -webkit-text-stroke: 1px black ; */
+}
+
+.margen {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.divContenedor {
+  background-color: white;
+}
+
+.divCentrado {
+  width: 110px; /* Para que no se rompa en dos líneas, y lo translade tal cual. */
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.divCentrado2 {
+  width: 110px; /* Para que no se rompa en dos líneas, y lo translade tal cual. */
+  margin-left: 45%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 900px) {
+  .imagen {
+    max-width: 470px;
+  }
+
+  .titulo {
+    font-size: 150%;
+  }
+
+  .texto {
+    font-family: Arial;
+    font-style: italic;
+    font-size: 100%;
+  }
+
+  .margen {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+/*
+  background-image: url('https://img.freepik.com/vector-gratis/fondo-tecnologia-digital-alambre-malla-red_1017-27428.jpg?w=996&t=st=1658861128~exp=1658861728~hmac=9feb5c14f94a570c2bd8752a57277ddf312e9cb306d3e8b47e9adf30d72842a3');
+  
+  url('../src/images/ImagenFondoContacto.png')
+  transform: translateX(50%) translateY(50%);
+  
+  background-image: url(" ImagenFondoContacto.png");
+  */
