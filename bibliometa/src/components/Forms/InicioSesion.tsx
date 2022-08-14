@@ -2,15 +2,8 @@ import React, { ChangeEvent, FormEvent, useContext, useState } from "react";
 import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
 import BiblioLogo from "../../images/Logo_horizontal2-sf.png";
-import { auth, db } from "../../firebasebd/firebase";
 import { Navigate } from "react-router-dom";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-} from "firebase/auth";
 
-import { getFirestore, addDoc, collection } from "firebase/firestore";
 import { Link } from "react-router-dom";
 
 type Values = {
@@ -36,25 +29,12 @@ function InicioSesion({ referencia }: VariableGlobal) {
     event.preventDefault();
     console.log(values);
 
-    try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        values.name,
-        values.password
-      );
+    // const { currentUser } = useContext(AuthContext);
 
-      const user = userCredential.user;
-    } catch (error) {
-      alert(error);
-    }
+    // if (currentUser) {
+    //   return <Navigate to="/contact" />;
+    // }
   };
-
-  // const { currentUser } = useContext(AuthContext);
-
-  // if (currentUser) {
-  //   return <Navigate to="/contact" />;
-  // }
-
   return (
     <div className="d-flex flex-column align-items-center mt-4 ">
       <div>
