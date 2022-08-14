@@ -4,7 +4,7 @@ import TextInput from "../TextInput/TextInput";
 import BiblioLogo from "../../images/Logo_horizontal2-sf.png";
 import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { postLoginUser } from "../../services/LibraryServices";
+import { getLoginUser } from "../../services/LibraryServices";
 type Values = {
   name: string;
   password: string;
@@ -30,7 +30,7 @@ function InicioSesion({ referencia }: VariableGlobal) {
     event.preventDefault();
     console.log(values);
 
-    postLoginUser(values).then((response) => {
+    getLoginUser(values).then((response) => {
       console.log(response);
       setLoginStatus(response.status);
     });

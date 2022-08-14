@@ -11,17 +11,6 @@ export async function getAllUsers() {
     } catch (error) {
         return [];
     }
-    // try {
-    //     const actualData = fetch(`https://localhost:7188/api/User/GetUsers`)
-    //         .then((response) => response.json())
-    //         .then((actualData) => console.log(actualData));
-
-    //     return await actualData;
-
-    // } catch (error) {
-    //     return [];
-    // }
-
 }
 
 export async function getBookUser() {
@@ -38,10 +27,26 @@ export async function postCreateUser(data) {
         const response = await axios.post(`https://localhost:7188/api/User/CreateUser`, {
             "firstName": "Juan",
             "lastName": "Perez",
-            "alias": "Jua",
+            "alias": data.name,
             "email": "string@",
-            "password": "ng",
+            "password": data.password,
             "birth": "s/s/s"
+
+        });
+
+        return await response;
+    } catch (error) {
+
+    }
+}
+
+export async function getLoginUser(data) {
+    try {
+        const response = await axios.get(`https://localhost:7188/api/User/LoginUser`, {
+            params: {
+                "alias": data.name,
+                "pass": data.password,
+            }
 
         });
 
@@ -60,21 +65,6 @@ export async function postBookUser() {
             "year": "string",
             "status": true,
             "operationType": "string"
-        });
-
-        return await response;
-    } catch (error) {
-
-    }
-}
-export async function postLoginUser(data) {
-    try {
-        const response = await axios.get(`https://localhost:7188/api/User/LoginUser`, {
-            params: {
-                "alias": data.name,
-                "pass": data.password,
-            }
-
         });
 
         return await response;

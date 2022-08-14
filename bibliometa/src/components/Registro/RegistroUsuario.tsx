@@ -2,14 +2,9 @@ import React, { ChangeEvent, FormEvent } from "react";
 import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
 import BiblioLogo from "../../images/Logo_horizontal2-sf.png";
-import {
-  getAllUsers,
-  postBookUser,
-  postCreateUser,
-} from "../../services/LibraryServices";
+import { postCreateUser } from "../../services/LibraryServices";
 import { useState, useEffect } from "react";
-// const db = getFirestore();
-// const auth = getAuth();
+import { Navigate } from "react-router-dom";
 
 type Values = {
   name: string;
@@ -26,36 +21,30 @@ function RegistroUsuario({ referencia }: VariableGlobal) {
     password: "",
   });
 
-  const [currentUser, setCurrentUser] = useState<boolean>(false);
-
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
-  const [users, setUsers] = useState([]);
-
-  // useEffect(() => {
-  //   fetch(`https://localhost:7188/api/User/GetUsers`)
-  //     .then((response) => response.json())
-  //     .then((actualData) => console.log(actualData));
-  // }, []);
+  // const [registerState, setRegisterState] = useState([]);
+  const [registerState, setRegisterState] = useState(0);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    postCreateUser().then((res) => {
+    postCreateUser(values).then((res) => {
       console.log(res.data);
+      setRegisterState(res.data);
     });
-    // console.log(values);
-    // getAllUsers()
-    // getAllUsers().then((users) => {
-    //   console.log(users);
-    //   setUsers(users);
-    // });
   };
 
-  // if (currentUser) {
-  //   return <Navigate to="/login" />;
-  // }
+  if (registerState > 0) {
+    alert("Usuario registrado satisfactoriamente");
+    return <Navigate to="/login" />;
+  } else if (registerState === 101) {
+    alert(
+      "El usuario con estos datos no pudo ser registrado. Verifique los datos"
+    );
+    setRegisterState(0);
+  }
 
   return (
     <div className="d-flex flex-column align-items-center mt-4 ">
