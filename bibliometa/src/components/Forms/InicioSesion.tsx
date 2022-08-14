@@ -39,7 +39,7 @@ function InicioSesion({ referencia }: VariableGlobal) {
       setLoginStatus(response.status);
     });
 
-    setState(values.name);
+    setState(values);
   };
 
   if (loginStatus === 200) {

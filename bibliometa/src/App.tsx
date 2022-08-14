@@ -23,7 +23,6 @@ function App() {
             path="/signup"
             element={<RegistroUsuario referencia="/ss" />}
           />
-
           <Route path="/login" element={<InicioSesionContainer />} />
           <Route path="/" element={<GrillaLibrosContainer />} />
           <Route path="/inicio/:id" element={<DetallesLibros />} />

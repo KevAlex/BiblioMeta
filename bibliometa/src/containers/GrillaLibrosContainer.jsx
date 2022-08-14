@@ -17,8 +17,6 @@ export function GrillaLibrosContainer() {
   const query = useQuery();
   const search = query.get("search");
   console.log(search);
-  // const [state, setState] = useContext(AppContext);
-  // console.log("Alias del usuario Grid ", state);
   return (
     <div>
       <header>
@@ -26,11 +24,6 @@ export function GrillaLibrosContainer() {
       </header>
       <main>
         <Buscar />
-        <div>
-          <Link to="/perfil" className="btn btn-primary">
-            Inicia sesión
-          </Link>
-        </div>
         <GridLibros />
       </main>
       <footer>

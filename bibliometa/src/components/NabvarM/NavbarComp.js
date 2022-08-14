@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 export default function NavbarComp() {
   const [state, setState] = useContext(AppContext);
-  // console.log("Alias del usuario Navbar", state);
+  console.log("Alias del usuario Navbar", state.name);
   return (
     <div>
       <Navbar bg="black" variant={"dark"} expand="lg">
@@ -41,9 +41,9 @@ export default function NavbarComp() {
               <Link to="/perfil" className="text-primary">
                 Mi Perfil
               </Link>
-              <Nav.Link href="/contacto"></Nav.Link>
+              {/* <Nav.Link href="/contacto"></Nav.Link> */}
             </Nav>
-            <p className="text-success"> Bienvenido {state} </p>
+            <p className="text-success"> Bienvenido {state.name} </p>
             {/* <Form className="d-flex">
               <Form.Control
                 type="search"
