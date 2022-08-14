@@ -44,6 +44,9 @@ export default function NavbarComp() {
               <Link to="/perfil" className="text-primary mx-4">
                 Mi Perfil
               </Link>
+              <Link to="/contacto" className="text-primary mx-4">
+                Contactanos
+              </Link>
               {/* <Nav.Link href="/contacto"></Nav.Link> */}
             </Nav>
             <p className="text-success"> Bienvenido {state.name} </p>

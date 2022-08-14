@@ -11,11 +11,15 @@ export async function getAllUsers() {
     }
 }
 
-export async function getBookUser() {
+export async function getBookUser(data) {
     try {
-        const response = await axios.get('https://localhost:7188/api/Library/GetUserBook');
+        const response = await axios.get('https://localhost:7188/api/Library/GetUserBook', {
+            params: {
+                "alias": data
+            }
+        });
         console.log('response  ', response)
-        return response.data;
+        return response;
     } catch (error) {
         return [];
     }
