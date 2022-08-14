@@ -5,6 +5,8 @@ import BiblioLogo from "../../images/Logo_horizontal2-sf.png";
 import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { getLoginUser } from "../../services/LibraryServices";
+import { AppContext } from "../../services/ReferenceDataContext";
+
 type Values = {
   name: string;
   password: string;
@@ -15,6 +17,8 @@ type VariableGlobal = {
 };
 
 function InicioSesion({ referencia }: VariableGlobal) {
+  const [state, setState] = useContext(AppContext);
+
   const [values, setValues] = useState<Values>({
     name: "",
     password: "",
@@ -34,6 +38,8 @@ function InicioSesion({ referencia }: VariableGlobal) {
       console.log(response);
       setLoginStatus(response.status);
     });
+
+    setState(values.name);
   };
 
   if (loginStatus === 200) {

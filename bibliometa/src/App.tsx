@@ -12,24 +12,31 @@ import DetallesLibros from "./components/DetallesLibros/DetallesLibros";
 import VentanaPago from "./components/VentanaPago/VentanaPago";
 import librojson from "./informacion/libros.json";
 
+import Provider from "./services/ReferenceDataContext";
 function App() {
   return (
     // <RegistroUsuario referencia="/sa" />
+    <Provider>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/signup"
+            element={<RegistroUsuario referencia="/ss" />}
+          />
 
-    <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<InicioSesionContainer />} />
-        <Route path="/contacto" element={<ContactoContainer />} />
-        <Route path="/signup" element={<RegistroUsuario referencia="/ss" />} />
-        <Route path="/perfil" element={<PerfilUsuarioContainer />} />
-        <Route path="/" element={<GrillaLibrosContainer />} />
-        <Route path="/inicio/:id" element={<DetallesLibros />} />
-        <Route
-          path="/ventanapagos"
-          element={<VentanaPago libro={librojson} />}
-        />
-      </Routes>
-    </BrowserRouter>
+          <Route path="/login" element={<InicioSesionContainer />} />
+          <Route path="/" element={<GrillaLibrosContainer />} />
+          <Route path="/inicio/:id" element={<DetallesLibros />} />
+          <Route path="/perfil" element={<PerfilUsuarioContainer />} />
+          <Route path="/contacto" element={<ContactoContainer />} />
+
+          <Route
+            path="/ventanapagos"
+            element={<VentanaPago libro={librojson} />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

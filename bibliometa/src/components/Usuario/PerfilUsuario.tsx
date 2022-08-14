@@ -1,6 +1,10 @@
 import React from "react";
 import Perfil from "../../images/Perfil.png";
+import { AppContext } from "../../services/ReferenceDataContext";
+import { useContext } from "react";
 function PerfilUsuario() {
+  const [state, setState] = useContext(AppContext);
+  console.log("Alias del usuario Perfil", state);
   return (
     <div className="d-flex flex-row mt-4">
       <div className="me-4">
@@ -9,7 +13,7 @@ function PerfilUsuario() {
             <img src={Perfil} width="110" height="110"></img>
           </div>
           <div>
-            <h2>Hola, Brayan!</h2>
+            <h2>Hola, {state}!</h2>
             <p>Bienvenido a tu cuenta</p>
           </div>
         </div>
