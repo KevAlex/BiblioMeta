@@ -69,10 +69,12 @@ export async function postBookUser() {
 }
 export async function postLoginUser(data) {
     try {
-        const response = await axios.post(`https://localhost:7188/api/User/LoginUser`, {
+        const response = await axios.get(`https://localhost:7188/api/User/LoginUser`, {
+            params: {
+                "alias": data.name,
+                "pass": data.password,
+            }
 
-            "alias": "Jua",
-            "password": "ng",
         });
 
         return await response;

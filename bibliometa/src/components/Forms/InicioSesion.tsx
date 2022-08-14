@@ -3,9 +3,8 @@ import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
 import BiblioLogo from "../../images/Logo_horizontal2-sf.png";
 import { Navigate } from "react-router-dom";
-
 import { Link } from "react-router-dom";
-
+import { postLoginUser } from "../../services/LibraryServices";
 type Values = {
   name: string;
   password: string;
@@ -21,6 +20,8 @@ function InicioSesion({ referencia }: VariableGlobal) {
     password: "",
   });
 
+  const [loginStatus, setLoginStatus] = useState(0);
+
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
@@ -29,12 +30,18 @@ function InicioSesion({ referencia }: VariableGlobal) {
     event.preventDefault();
     console.log(values);
 
-    // const { currentUser } = useContext(AuthContext);
-
-    // if (currentUser) {
-    //   return <Navigate to="/contact" />;
-    // }
+    postLoginUser(values).then((response) => {
+      console.log(response);
+      setLoginStatus(response.status);
+    });
   };
+
+  if (loginStatus === 200) {
+    return <Navigate to="/" />;
+  } else if (loginStatus === 204) {
+    alert("Datos erroneos");
+    setLoginStatus(0);
+  }
   return (
     <div className="d-flex flex-column align-items-center mt-4 ">
       <div>
@@ -75,10 +82,10 @@ function InicioSesion({ referencia }: VariableGlobal) {
               </a>
             </div>
             <div className="mt-4">
-              {/* <Button text="Iniciar sesion" type="submit" classN="p-2" /> */}
-              <Link to="/inicio" className="btn btn-primary">
+              <Button text="Iniciar sesion" type="submit" classN="p-2" />
+              {/* <Link to="/inicio" className="btn btn-primary">
                 Inicia sesión
-              </Link>
+              </Link> */}
             </div>
           </div>
         </form>

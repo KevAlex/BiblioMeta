@@ -19,7 +19,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<InicioSesionContainer />} />
-        <Route path="/contact" element={<ContactoContainer />} />
+        <Route path="/contacto" element={<ContactoContainer />} />
         <Route path="/signup" element={<RegistroUsuario referencia="/ss" />} />
         <Route path="/perfil" element={<PerfilUsuarioContainer />} />
         <Route path="/" element={<GrillaLibrosContainer />} />
