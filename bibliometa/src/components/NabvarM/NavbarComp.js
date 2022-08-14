@@ -36,9 +36,12 @@ export default function NavbarComp() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action3">Alquiler</Nav.Link>
-              <Nav.Link href="#action4">Venta</Nav.Link>
-              <Link to="/perfil" className="text-primary">
+              {/* <Nav.Link href="#action3">Alquiler</Nav.Link>
+              <Nav.Link href="#action4">Venta</Nav.Link> */}
+              <Link to="/" className="text-primary mx-4">
+                Inicio
+              </Link>
+              <Link to="/perfil" className="text-primary mx-4">
                 Mi Perfil
               </Link>
               {/* <Nav.Link href="/contacto"></Nav.Link> */}
