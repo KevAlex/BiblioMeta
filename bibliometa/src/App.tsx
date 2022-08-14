@@ -1,7 +1,6 @@
 import React from "react";
 //import logo from './logo.svg';
 import "./App.css";
-import { AuthProvider } from "./components/BD/Auth";
 import RegistroUsuario from "./components/Registro/RegistroUsuario";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import InicioSesionContainer from "./containers/InicioSesionContainer";
@@ -13,29 +12,30 @@ import DetallesLibros from "./components/DetallesLibros/DetallesLibros";
 import VentanaPago from "./components/VentanaPago/VentanaPago";
 import librojson from "./informacion/libros.json";
 
+import Provider from "./services/ReferenceDataContext";
 function App() {
   return (
     // <RegistroUsuario referencia="/sa" />
-
-    <BrowserRouter>
-      <AuthProvider>
+    <Provider>
+      <BrowserRouter>
         <Routes>
-
-          <Route path="/login" element={<InicioSesionContainer />} />
-          <Route path="/contact" element={<ContactoContainer />} />
           <Route
             path="/signup"
             element={<RegistroUsuario referencia="/ss" />}
           />
-          <Route path="/perfil" element={<PerfilUsuarioContainer />} />
+          <Route path="/login" element={<InicioSesionContainer />} />
           <Route path="/" element={<GrillaLibrosContainer />} />
           <Route path="/inicio/:id" element={<DetallesLibros />} />
-          <Route path="/ventanapagos" element={<VentanaPago libro={librojson}/>} />
-          
-        </Routes>
-      </AuthProvider>
-    </BrowserRouter>
+          <Route path="/perfil" element={<PerfilUsuarioContainer />} />
+          <Route path="/contacto" element={<ContactoContainer />} />
 
+          <Route
+            path="/ventanapagos"
+            element={<VentanaPago libro={librojson} />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

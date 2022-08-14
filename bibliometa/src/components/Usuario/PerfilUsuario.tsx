@@ -1,6 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Perfil from "../../images/Perfil.png";
+import { AppContext } from "../../services/ReferenceDataContext";
+import { useContext } from "react";
+import { getLoginUser } from "../../services/LibraryServices";
+
+type Values = {
+  alias: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  birth: string;
+};
+
 function PerfilUsuario() {
+  const [state, setState] = useContext(AppContext);
+  const [userData, setUserData] = useState<Values>({
+    alias: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    birth: "",
+  });
+  console.log("Alias del usuario Perfil", state);
+
+  useEffect(() => {
+    getLoginUser(state).then((response) => {
+      console.log(response);
+      setUserData(response.data);
+    });
+  }, []);
   return (
     <div className="d-flex flex-row mt-4">
       <div className="me-4">
@@ -9,7 +37,7 @@ function PerfilUsuario() {
             <img src={Perfil} width="110" height="110"></img>
           </div>
           <div>
-            <h2>Hola, Brayan!</h2>
+            <h2>Hola, {state.name}!</h2>
             <p>Bienvenido a tu cuenta</p>
           </div>
         </div>
@@ -43,7 +71,7 @@ function PerfilUsuario() {
               <input
                 className="form-control"
                 id="floatingInput"
-                value="test@example.com"
+                value={userData.email}
               />
               <label> Correo</label>
             </div>
@@ -53,7 +81,7 @@ function PerfilUsuario() {
               <input
                 className="form-control"
                 id="floatingInput"
-                value="12/05/1999"
+                value={userData.birth}
               />
               <label>Fecha de nacimiento</label>
             </div>
@@ -65,7 +93,7 @@ function PerfilUsuario() {
               <input
                 className="form-control"
                 id="floatingInput"
-                value="Brayan Alonso"
+                value={userData.firstName}
               />
               <label>Nombre</label>
             </div>
@@ -76,7 +104,7 @@ function PerfilUsuario() {
               <input
                 className="form-control"
                 id="floatingInput"
-                value="Pipa Hernandez"
+                value={userData.lastName}
               />
               <label>Apellido</label>
             </div>

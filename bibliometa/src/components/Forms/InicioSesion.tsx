@@ -2,16 +2,10 @@ import React, { ChangeEvent, FormEvent, useContext, useState } from "react";
 import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
 import BiblioLogo from "../../images/Logo_horizontal2-sf.png";
-import { auth, db } from "../../firebasebd/firebase";
 import { Navigate } from "react-router-dom";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-} from "firebase/auth";
-
-import { getFirestore, addDoc, collection } from "firebase/firestore";
 import { Link } from "react-router-dom";
+import { getLoginUser } from "../../services/LibraryServices";
+import { AppContext } from "../../services/ReferenceDataContext";
 
 type Values = {
   name: string;
@@ -23,10 +17,14 @@ type VariableGlobal = {
 };
 
 function InicioSesion({ referencia }: VariableGlobal) {
+  const [state, setState] = useContext(AppContext);
+
   const [values, setValues] = useState<Values>({
     name: "",
     password: "",
   });
+
+  const [loginStatus, setLoginStatus] = useState(0);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValues({ ...values, [event.target.name]: event.target.value });
@@ -36,25 +34,20 @@ function InicioSesion({ referencia }: VariableGlobal) {
     event.preventDefault();
     console.log(values);
 
-    try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        values.name,
-        values.password
-      );
+    getLoginUser(values).then((response) => {
+      console.log(response);
+      setLoginStatus(response.status);
+    });
 
-      const user = userCredential.user;
-    } catch (error) {
-      alert(error);
-    }
+    setState(values);
   };
 
-  // const { currentUser } = useContext(AuthContext);
-
-  // if (currentUser) {
-  //   return <Navigate to="/contact" />;
-  // }
-
+  if (loginStatus === 200) {
+    return <Navigate to="/" />;
+  } else if (loginStatus === 204) {
+    alert("Datos erroneos");
+    setLoginStatus(0);
+  }
   return (
     <div className="d-flex flex-column align-items-center mt-4 ">
       <div>
@@ -95,10 +88,10 @@ function InicioSesion({ referencia }: VariableGlobal) {
               </a>
             </div>
             <div className="mt-4">
-              {/* <Button text="Iniciar sesion" type="submit" classN="p-2" /> */}
-              <Link to="/inicio" className="btn btn-primary">
+              <Button text="Iniciar sesion" type="submit" classN="p-2" />
+              {/* <Link to="/inicio" className="btn btn-primary">
                 Inicia sesión
-              </Link>
+              </Link> */}
             </div>
           </div>
         </form>
