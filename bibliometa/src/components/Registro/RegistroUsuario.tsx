@@ -1,16 +1,13 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent } from "react";
 import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
 import BiblioLogo from "../../images/Logo_horizontal2-sf.png";
-import { auth, db } from "../../firebasebd/firebase";
-import { Navigate } from "react-router-dom";
 import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-} from "firebase/auth";
-
-import { getFirestore, addDoc, collection } from "firebase/firestore";
+  getAllUsers,
+  postBookUser,
+  postCreateUser,
+} from "../../services/LibraryServices";
+import { useState, useEffect } from "react";
 // const db = getFirestore();
 // const auth = getAuth();
 
@@ -35,28 +32,25 @@ function RegistroUsuario({ referencia }: VariableGlobal) {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
+  const [users, setUsers] = useState([]);
+
+  // useEffect(() => {
+  //   fetch(`https://localhost:7188/api/User/GetUsers`)
+  //     .then((response) => response.json())
+  //     .then((actualData) => console.log(actualData));
+  // }, []);
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(values);
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        values.name,
-        values.password
-      );
-      setCurrentUser(true);
-      await addDoc(collection(db, "users"), {
-        uid: userCredential.user.uid,
-        email: userCredential.user.email,
-      });
-    } catch (error) {
-      alert(error);
-    }
-
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((err) => console.log(err.message));
+    postCreateUser().then((res) => {
+      console.log(res.data);
+    });
+    // console.log(values);
+    // getAllUsers()
+    // getAllUsers().then((users) => {
+    //   console.log(users);
+    //   setUsers(users);
+    // });
   };
 
   // if (currentUser) {
