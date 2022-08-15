@@ -11,7 +11,8 @@ type Values = {
 };
 
 function HistorialCompras() {
-  const [state, setState] = useContext(AppContext);
+  const { user } = useContext(AppContext);
+  const [state, setState] = user;
   const [bookData, setBookData] = useState<Array<Values>>([]);
 
   // const [bookData, setBookData] = useState<Values>({
@@ -23,7 +24,10 @@ function HistorialCompras() {
   useEffect(() => {
     getBookUser(state.name).then((response) => {
       console.log(response.data);
-      setBookData(response.data);
+      if (response.data.length === 0) {
+      } else {
+        setBookData(response.data);
+      }
     });
   }, []);
 
@@ -64,10 +68,15 @@ function HistorialCompras() {
         <div>
           <h2>1. Historial de compras o alquiler</h2>
         </div>
-
+        {bookData === undefined || bookData.length === 0 ? (
+          <div>Resumen: No hay libros comprados o alquilados</div>
+        ) : (
+          <div>Resumen:</div>
+        )}
         <div className="row mb-4">
           <div className="col">Libro</div>
           <div className="col">Operación</div>
+
           {bookData.map((item) => {
             return (
               <div className="row mb-4">

@@ -6,7 +6,8 @@ import { useContext } from "react";
 import { Navigate, Redirect } from "react-router-dom";
 
 export function GridLibros() {
-  const [state, setState] = useContext(AppContext);
+  const { user } = useContext(AppContext);
+  const [state, setState] = user;
 
   if (state.name === undefined) {
     return <Navigate to="/login" />;
