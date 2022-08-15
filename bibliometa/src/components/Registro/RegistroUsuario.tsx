@@ -10,6 +10,10 @@ import { Link } from "react-router-dom";
 type Values = {
   name: string;
   password: string;
+  alias: string;
+  email: string;
+  birth: string;
+  lastName: string;
 };
 
 type VariableGlobal = {
@@ -20,6 +24,10 @@ function RegistroUsuario({ referencia }: VariableGlobal) {
   const [values, setValues] = useState<Values>({
     name: "",
     password: "",
+    alias: "",
+    email: "",
+    birth: "",
+    lastName: "",
   });
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -31,6 +39,7 @@ function RegistroUsuario({ referencia }: VariableGlobal) {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    console.log(values);
     postCreateUser(values).then((res) => {
       console.log(res.data);
       setRegisterState(res.data);
@@ -64,7 +73,34 @@ function RegistroUsuario({ referencia }: VariableGlobal) {
                 type="text"
                 label="Inserte su usuario"
                 onChange={handleChange}
+                name={"alias"}
+              />
+            </div>
+            <div className="mt-2 h-100">
+              <TextInput
+                classN="h-75 flex-grow-1 p-2"
+                type="text"
+                label="Inserte su nombre"
+                onChange={handleChange}
                 name={"name"}
+              />
+            </div>
+            <div className="mt-2 h-100">
+              <TextInput
+                classN="h-75 flex-grow-1 p-2"
+                type="text"
+                label="Inserte su apellido"
+                onChange={handleChange}
+                name={"lastName"}
+              />
+            </div>
+            <div className="mt-2 mb-2">
+              <TextInput
+                classN="h-75 p-2"
+                type="text"
+                label="Inserte su E-mail"
+                onChange={handleChange}
+                name={"email"}
               />
             </div>
             <div className="mt-2 mb-2">
@@ -74,6 +110,24 @@ function RegistroUsuario({ referencia }: VariableGlobal) {
                 label="Inserte su contraseña"
                 onChange={handleChange}
                 name={"password"}
+              />
+            </div>
+            <div className="mt-2 mb-2">
+              <TextInput
+                classN="h-75 p-2"
+                type="password"
+                label="Confirme su contraseña"
+                onChange={handleChange}
+                name={"password"}
+              />
+            </div>
+            <div className="mt-2 mb-2">
+              <TextInput
+                classN="h-75 p-2"
+                type="text"
+                label="Fecha de nacimiento"
+                onChange={handleChange}
+                name={"birth"}
               />
             </div>
             <div></div>

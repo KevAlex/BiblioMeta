@@ -27,12 +27,12 @@ export async function getBookUser(data) {
 export async function postCreateUser(data) {
     try {
         const response = await axios.post(`https://localhost:7188/api/User/CreateUser`, {
-            "firstName": "Juan",
-            "lastName": "Perez",
-            "alias": data.name,
-            "email": "string@",
+            "firstName": data.name,
+            "lastName": data.lastName,
+            "alias": data.alias,
+            "email": data.email,
             "password": data.password,
-            "birth": "s/s/s"
+            "birth": data.birth
 
         });
 
