@@ -41,6 +41,9 @@ export function DetallesLibros() {
         <p className={styles.pColor}>
           <strong>Año:</strong> {xdlibro.year}
         </p>
+        <p className={styles.pColor}>
+          <strong>Precio:</strong> {xdlibro.precio}
+        </p>
 
         {/* <Prueba libro = {xdlibro}/> */}
 
