@@ -29,19 +29,19 @@ export function DetallesLibros() {
         alt={xdlibro.title}
       />
       <div className={styles.col + " " + styles.detallesLibro}>
-        <p className={styles.primero}>
+        <p className="text-black">
           <strong>Titulo:</strong> {xdlibro.title}
         </p>
-        <p className={styles.pColor}>
+        <p className="text-black">
           <strong>Autor:</strong> {xdlibro.author}
         </p>
-        <p className={styles.pColor}>
+        <p className="text-black">
           <strong>Idioma:</strong> {xdlibro.language}
         </p>
-        <p className={styles.pColor}>
+        <p className="text-black">
           <strong>Año:</strong> {xdlibro.year}
         </p>
-        <p className={styles.pColor}>
+        <p className="text-black">
           <strong>Precio:</strong> {xdlibro.precio}
         </p>
 
