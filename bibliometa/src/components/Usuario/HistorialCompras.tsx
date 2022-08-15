@@ -32,7 +32,7 @@ function HistorialCompras() {
   }, []);
 
   return (
-    <div className="d-flex flex-row mt-4">
+    <div className="d-flex flex-row mt-4 bg-white">
       <div className="me-4">
         <div className="d-flex flex-col">
           <div className="me-4">
@@ -40,7 +40,6 @@ function HistorialCompras() {
           </div>
           <div>
             <h2>Hola, {state.name}!</h2>
-            <p>Bienvenido a tu cuenta</p>
           </div>
         </div>
         <div>
@@ -74,8 +73,12 @@ function HistorialCompras() {
           <div>Resumen:</div>
         )}
         <div className="row mb-4">
-          <div className="col">Libro</div>
-          <div className="col">Operación</div>
+          <div className="col">
+            <p>Libro</p>
+          </div>
+          <div className="col">
+            <p>Operación</p>
+          </div>
 
           {bookData.map((item) => {
             return (

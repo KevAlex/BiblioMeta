@@ -5,12 +5,10 @@ import RegistroUsuario from "./components/Registro/RegistroUsuario";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import InicioSesionContainer from "./containers/InicioSesionContainer";
 import ContactoContainer from "./containers/ContactoContainer";
-import PlayContainer from "./containers/DummyContainer";
 import PerfilUsuarioContainer from "./containers/PerfilUsuarioContainer";
 import GrillaLibrosContainer from "./containers/GrillaLibrosContainer";
 import DetallesLibros from "./components/DetallesLibros/DetallesLibros";
 import VentanaPago from "./components/VentanaPago/VentanaPago";
-import librojson from "./informacion/libros.json";
 
 import Provider from "./services/ReferenceDataContext";
 import HistorialContainer from "./containers/HistorialContainer";
