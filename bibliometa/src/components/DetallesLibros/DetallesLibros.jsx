@@ -2,18 +2,21 @@ import styles from "./DetallesLibros.module.css";
 import libros from "../../informacion/libros.json";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-// import Prueba from "../VentanaPago/VentanaPago";
-
-//import libros from "./libros.json";
 import { useParams } from "react-router-dom";
+import { AppContext } from "../../services/ReferenceDataContext";
+import { useContext } from "react";
 
 export function DetallesLibros() {
   //const rutaImagen = "/" + libroinf.imageLink;
+  const { books } = useContext(AppContext);
+  const [data, setData] = books;
 
   let params = useParams();
   let xdlibro = libros.find((libro) => libro.id == params.id);
 
   const rutaImagen = "/" + xdlibro.imageLink;
+
+  setData(xdlibro);
   //console.log(rutaImagen);
 
   //Estudiar funcion ternaria vagos :*
@@ -42,14 +45,14 @@ export function DetallesLibros() {
         {/* <Prueba libro = {xdlibro}/> */}
 
         {xdlibro.alquiler === "si" ? (
-          <Link to={"/ventanapagos"} libro = {xdlibro}>
+          <Link to={"/ventanapagos"} libro={xdlibro}>
             <Button variant="success">Alquilar</Button>
           </Link>
         ) : (
           <></>
         )}
         {xdlibro.venta === "si" ? (
-          <Link to={"/ventanapagos"} libro = {xdlibro}>
+          <Link to={"/ventanapagos"} libro={xdlibro}>
             <Button variant="info">Comprar</Button>
           </Link>
         ) : (

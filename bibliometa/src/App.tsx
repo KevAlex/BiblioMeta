@@ -31,10 +31,7 @@ function App() {
           <Route path="/contacto" element={<ContactoContainer />} />
           <Route path="/historial" element={<HistorialContainer />} />
 
-          <Route
-            path="/ventanapagos"
-            element={<VentanaPago libro={librojson} />}
-          />
+          <Route path="/ventanapagos" element={<VentanaPago />} />
         </Routes>
       </BrowserRouter>
     </Provider>
