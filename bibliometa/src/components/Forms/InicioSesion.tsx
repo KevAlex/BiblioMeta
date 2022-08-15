@@ -35,12 +35,18 @@ function InicioSesion({ referencia }: VariableGlobal) {
     event.preventDefault();
     console.log(values);
 
+    // Production
     getLoginUser(values).then((response) => {
       console.log(response);
       setLoginStatus(response.status);
     });
-
     setState(values);
+
+    // Test without DB
+    // setLoginStatus(200);
+    // values.name = "Pepito";
+    // values.password = "123";
+    // setState(values);
   };
 
   if (loginStatus === 200) {

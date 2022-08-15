@@ -32,19 +32,18 @@ function PerfilUsuario() {
     });
   }, []);
   return (
-    <div className="d-flex flex-row mt-4">
+    <div className="d-flex flex-row mt-4 mb-5">
       <div className="me-4">
         <div className="d-flex flex-col">
           <div className="me-4">
             <img src={Perfil} width="110" height="110"></img>
           </div>
           <div>
-            <h2>Hola, {state.name}!</h2>
-            <p>Bienvenido a tu cuenta</p>
+            <h2 className="mt-2 text-center">Hola, {state.name}!</h2>
           </div>
         </div>
         <div>
-          <div className="list-group">
+          <div className="list-group mt-4">
             <Link
               to="/perfil"
               className="list-group-item list-group-item-action active"

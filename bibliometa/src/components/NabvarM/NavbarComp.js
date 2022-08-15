@@ -39,18 +39,18 @@ export default function NavbarComp() {
             >
               {/* <Nav.Link href="#action3">Alquiler</Nav.Link>
               <Nav.Link href="#action4">Venta</Nav.Link> */}
-              <Link to="/" className="text-primary mx-4">
+              <Link to="/" className="text-white mx-4">
                 Inicio
               </Link>
-              <Link to="/perfil" className="text-primary mx-4">
+              <Link to="/perfil" className="text-white mx-4">
                 Mi Perfil
               </Link>
-              <Link to="/contacto" className="text-primary mx-4">
+              <Link to="/contacto" className="text-white mx-4">
                 Contactanos
               </Link>
               {/* <Nav.Link href="/contacto"></Nav.Link> */}
             </Nav>
-            <p className="text-success"> Bienvenido {state.name} </p>
+            <p className="text-white mt-2"> Bienvenido {state.name}! </p>
             {/* <Form className="d-flex">
               <Form.Control
                 type="search"

@@ -39,11 +39,11 @@ function HistorialCompras() {
             <img src={Perfil} width="110" height="110"></img>
           </div>
           <div>
-            <h2>Hola, {state.name}!</h2>
+            <h2 className="mt-2 text-center">Hola, {state.name}!</h2>
           </div>
         </div>
         <div>
-          <div className="list-group">
+          <div className="list-group mt-4">
             <Link
               to="/perfil"
               className="list-group-item list-group-item-action "
