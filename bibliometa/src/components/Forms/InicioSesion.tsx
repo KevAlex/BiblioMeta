@@ -35,12 +35,18 @@ function InicioSesion({ referencia }: VariableGlobal) {
     event.preventDefault();
     console.log(values);
 
+    // Production
     getLoginUser(values).then((response) => {
       console.log(response);
       setLoginStatus(response.status);
     });
-
     setState(values);
+
+    // Test without DB
+    // setLoginStatus(200);
+    // values.name = "Pepito";
+    // values.password = "123";
+    // setState(values);
   };
 
   if (loginStatus === 200) {
@@ -62,16 +68,16 @@ function InicioSesion({ referencia }: VariableGlobal) {
           <div className="d-flex flex-column justify-content-center align-items-center">
             <div className="mt-2 h-100">
               <TextInput
-                classN="h-75 flex-grow-1 p-2"
+                classN="h-75 flex-grow-1 p-2  form-control"
                 type="text"
                 label="Inserte su usuario"
                 onChange={handleChange}
                 name={"name"}
               />
             </div>
-            <div className="mt-2 mb-2">
+            <div className="mt-2 mb-2 ">
               <TextInput
-                classN="h-75 p-2"
+                classN="h-75 p-2  form-control"
                 type="password"
                 label="Inserte su contraseña"
                 onChange={handleChange}
@@ -88,11 +94,17 @@ function InicioSesion({ referencia }: VariableGlobal) {
                 ¿Olvidaste tu contraseña?
               </a>
             </div>
-            <div className="mt-4">
-              <Button text="Iniciar sesion" type="submit" classN="p-2" />
-              {/* <Link to="/inicio" className="btn btn-primary">
-                Inicia sesión
-              </Link> */}
+            <div className="mt-4 ">
+              <Button
+                text="Iniciar sesion"
+                type="submit"
+                classN="p-2 btn btn-primary"
+              />
+              <div className="mt-2">
+                <Link to="/signup" className="btn btn-primary">
+                  Registrarse
+                </Link>
+              </div>
             </div>
           </div>
         </form>

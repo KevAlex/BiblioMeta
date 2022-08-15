@@ -32,19 +32,18 @@ function HistorialCompras() {
   }, []);
 
   return (
-    <div className="d-flex flex-row mt-4">
+    <div className="d-flex flex-row mt-4 bg-white mb-5">
       <div className="me-4">
         <div className="d-flex flex-col">
           <div className="me-4">
             <img src={Perfil} width="110" height="110"></img>
           </div>
           <div>
-            <h2>Hola, {state.name}!</h2>
-            <p>Bienvenido a tu cuenta</p>
+            <h2 className="mt-2 text-center">Hola, {state.name}!</h2>
           </div>
         </div>
         <div>
-          <div className="list-group">
+          <div className="list-group mt-4">
             <Link
               to="/perfil"
               className="list-group-item list-group-item-action "
@@ -66,31 +65,50 @@ function HistorialCompras() {
 
       <div className="container">
         <div>
-          <h2>1. Historial de compras o alquiler</h2>
+          <h2 className="text-center">Historial de compras o alquiler</h2>
         </div>
         {bookData === undefined || bookData.length === 0 ? (
-          <div>Resumen: No hay libros comprados o alquilados</div>
+          <div className="mb-4">
+            Resumen: No hay libros comprados o alquilados
+          </div>
         ) : (
           <div>Resumen:</div>
         )}
         <div className="row mb-4">
-          <div className="col">Libro</div>
-          <div className="col">Operación</div>
-
-          {bookData.map((item) => {
-            return (
-              <div className="row mb-4">
-                <div key={item.title} className="col">
-                  <p>{item.title}</p>
-                </div>
-                <div className="col">
-                  <p> {item.operationType}</p>
-                </div>
-              </div>
-            );
-          })}
+          <table className="table table-hover">
+            <thead className="table-light">
+              <tr>
+                <th className="text-center" scope="col">
+                  Libro
+                </th>
+                <th className="text-center" scope="col">
+                  Tipo de operación
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {bookData.map((item) => {
+                return (
+                  <tr key={item.title}>
+                    <td className="text-center">{item.title}</td>
+                    <td className="text-center">{item.operationType}</td>
+                  </tr>
+                  // <div className="row mb-4">
+                  //   <div key={item.title} className="col">
+                  //     <p>{item.title}</p>
+                  //   </div>
+                  //   <div className="col">
+                  //     <p> {item.operationType}</p>
+                  //   </div>
+                  // </div>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
       </div>
+      <br></br>
+      <br></br>
     </div>
   );
 }
