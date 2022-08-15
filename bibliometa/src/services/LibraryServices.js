@@ -67,16 +67,10 @@ export async function postBookUser(user, book) {
     }
     try {
         const response = await axios.post(`https://localhost:7188/api/Library/AddBookUser`, {
-            // "alias": "alx",
-            // "title": "book.title",
-            // "author": "book.author",
-            // "year": "1855",
-            // "status": true,
-            // "operationType": ""
             "alias": user,
             "title": book.title,
             "author": book.author,
-            "year": 1855,
+            "year": book.year,
             "status": true,
             "operationType": operacion
         });
