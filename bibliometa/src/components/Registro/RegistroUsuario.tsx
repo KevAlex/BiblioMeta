@@ -5,6 +5,7 @@ import BiblioLogo from "../../images/Logo_horizontal2-sf.png";
 import { postCreateUser } from "../../services/LibraryServices";
 import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 type Values = {
   name: string;
@@ -75,18 +76,18 @@ function RegistroUsuario({ referencia }: VariableGlobal) {
                 name={"password"}
               />
             </div>
-            <div>
-              <a
-                className="App-link "
-                href={referencia}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                ¿Olvidaste tu contraseña?
-              </a>
-            </div>
+            <div></div>
             <div className="mt-4">
-              <Button text="Registrarme" type="submit" classN="p-2" />
+              <Button
+                text="Registrarme"
+                type="submit"
+                classN="p-2 btn btn-primary"
+              />
+            </div>
+            <div className="mt-2">
+              <Link to="/login" className="btn btn-primary">
+                Iniciar sesión
+              </Link>
             </div>
           </div>
         </form>

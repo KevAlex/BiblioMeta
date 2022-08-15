@@ -32,7 +32,7 @@ function HistorialCompras() {
   }, []);
 
   return (
-    <div className="d-flex flex-row mt-4 bg-white">
+    <div className="d-flex flex-row mt-4 bg-white mb-5">
       <div className="me-4">
         <div className="d-flex flex-col">
           <div className="me-4">
@@ -65,35 +65,50 @@ function HistorialCompras() {
 
       <div className="container">
         <div>
-          <h2>1. Historial de compras o alquiler</h2>
+          <h2 className="text-center">Historial de compras o alquiler</h2>
         </div>
         {bookData === undefined || bookData.length === 0 ? (
-          <div>Resumen: No hay libros comprados o alquilados</div>
+          <div className="mb-4">
+            Resumen: No hay libros comprados o alquilados
+          </div>
         ) : (
           <div>Resumen:</div>
         )}
         <div className="row mb-4">
-          <div className="col">
-            <p>Libro</p>
-          </div>
-          <div className="col">
-            <p>Operación</p>
-          </div>
-
-          {bookData.map((item) => {
-            return (
-              <div className="row mb-4">
-                <div key={item.title} className="col">
-                  <p>{item.title}</p>
-                </div>
-                <div className="col">
-                  <p> {item.operationType}</p>
-                </div>
-              </div>
-            );
-          })}
+          <table className="table table-hover">
+            <thead className="table-light">
+              <tr>
+                <th className="text-center" scope="col">
+                  Libro
+                </th>
+                <th className="text-center" scope="col">
+                  Tipo de operación
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {bookData.map((item) => {
+                return (
+                  <tr key={item.title}>
+                    <td className="text-center">{item.title}</td>
+                    <td className="text-center">{item.operationType}</td>
+                  </tr>
+                  // <div className="row mb-4">
+                  //   <div key={item.title} className="col">
+                  //     <p>{item.title}</p>
+                  //   </div>
+                  //   <div className="col">
+                  //     <p> {item.operationType}</p>
+                  //   </div>
+                  // </div>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
       </div>
+      <br></br>
+      <br></br>
     </div>
   );
 }

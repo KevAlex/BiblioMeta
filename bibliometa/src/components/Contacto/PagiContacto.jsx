@@ -2,6 +2,7 @@ import styles from "./PagiContacto.module.css";
 import Logo_img from "../../images/Lectores.png";
 import NavbarComp from "../NabvarM/NavbarComp";
 import Footer from "../Footer/footer";
+import Button from "../Button/Button";
 
 function PagiContacto() {
   // const { currentUser } = useContext(AuthContext);
@@ -109,6 +110,17 @@ function PagiContacto() {
                         value=""
                       />
                       <label>Descripcion</label>
+                    </div>
+                  </div>
+                </div>
+                <div className="container text-center mt-4">
+                  <div className="row">
+                    <div className="col">
+                      <Button
+                        text="Enviar peticion"
+                        type="submit"
+                        classN="p-2 btn btn-primary"
+                      />
                     </div>
                   </div>
                 </div>

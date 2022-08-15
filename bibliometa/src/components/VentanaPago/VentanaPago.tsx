@@ -155,7 +155,11 @@ export function VentanaPago() {
                     </div>
                   </div>
                   <div className={styles.divCentrado}>
-                    <Button text="Pagar" type="submit" classN="p-2" />
+                    <Button
+                      text="Pagar"
+                      type="submit"
+                      classN="p-2 btn btn-primary"
+                    />
                   </div>
                 </div>
               </form>
