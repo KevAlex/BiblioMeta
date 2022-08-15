@@ -5,8 +5,9 @@ import HistorialCompras from "../components/Usuario/HistorialCompras";
 import { AppContext } from "../services/ReferenceDataContext";
 
 function HistorialContainer() {
-  const [state, setState] = useContext(AppContext);
-  console.log("Alias del usuario Perfil", state);
+  const { user } = useContext(AppContext);
+  const [state, setState] = user;
+  // console.log("Alias del usuario Perfil", state);
   return (
     <>
       <header>

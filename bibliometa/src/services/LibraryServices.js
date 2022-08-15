@@ -58,15 +58,21 @@ export async function getLoginUser(data) {
     }
 }
 
-export async function postBookUser() {
+export async function postBookUser(user, book) {
+    let operacion = "";
+    if (book.alquiler === "si") {
+        operacion = "Alquiler"
+    } else {
+        operacion = "Compra"
+    }
     try {
-        const response = await axios.post(`https://localhost:7188/api/Library/AddUserBook`, {
-            "alias": "string",
-            "title": "string",
-            "author": "string",
-            "year": "string",
+        const response = await axios.post(`https://localhost:7188/api/Library/AddBookUser`, {
+            "alias": user,
+            "title": book.title,
+            "author": book.author,
+            "year": book.year,
             "status": true,
-            "operationType": "string"
+            "operationType": operacion
         });
 
         return await response;

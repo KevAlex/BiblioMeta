@@ -5,7 +5,8 @@ import Footer from "../components/Footer/footer";
 import { AppContext } from "../services/ReferenceDataContext";
 import { useContext } from "react";
 function PerfilUsuarioContainer() {
-  const [state, setState] = useContext(AppContext);
+  const { user } = useContext(AppContext);
+  const [state, setState] = user;
   console.log("Alias del usuario Perfil", state);
   return (
     <>

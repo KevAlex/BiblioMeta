@@ -14,7 +14,8 @@ import { Link } from "react-router-dom";
 //<img src="./Logo horizontal.png" width="200px"/>
 
 export default function NavbarComp() {
-  const [state, setState] = useContext(AppContext);
+  const { user } = useContext(AppContext);
+  const [state, setState] = user;
   console.log("Alias del usuario Navbar", state.name);
   return (
     <div>

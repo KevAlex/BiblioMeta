@@ -14,7 +14,8 @@ type Values = {
 };
 
 function PerfilUsuario() {
-  const [state, setState] = useContext(AppContext);
+  const { user } = useContext(AppContext);
+  const [state, setState] = user;
   const [userData, setUserData] = useState<Values>({
     alias: "",
     firstName: "",
