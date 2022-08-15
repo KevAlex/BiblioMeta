@@ -13,6 +13,7 @@ import VentanaPago from "./components/VentanaPago/VentanaPago";
 import librojson from "./informacion/libros.json";
 
 import Provider from "./services/ReferenceDataContext";
+import HistorialContainer from "./containers/HistorialContainer";
 function App() {
   return (
     // <RegistroUsuario referencia="/sa" />
@@ -28,6 +29,7 @@ function App() {
           <Route path="/inicio/:id" element={<DetallesLibros />} />
           <Route path="/perfil" element={<PerfilUsuarioContainer />} />
           <Route path="/contacto" element={<ContactoContainer />} />
+          <Route path="/historial" element={<HistorialContainer />} />
 
           <Route
             path="/ventanapagos"

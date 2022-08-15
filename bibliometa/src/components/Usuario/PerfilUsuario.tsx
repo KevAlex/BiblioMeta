@@ -3,6 +3,7 @@ import Perfil from "../../images/Perfil.png";
 import { AppContext } from "../../services/ReferenceDataContext";
 import { useContext } from "react";
 import { getLoginUser } from "../../services/LibraryServices";
+import { Link } from "react-router-dom";
 
 type Values = {
   alias: string;
@@ -43,17 +44,19 @@ function PerfilUsuario() {
         </div>
         <div>
           <div className="list-group">
-            <a
-              href="#"
+            <Link
+              to="/perfil"
               className="list-group-item list-group-item-action active"
-              aria-current="true"
             >
               Mi cuenta
-            </a>
-            <a href="#" className="list-group-item list-group-item-action">
+            </Link>
+            <Link
+              to="/historial"
+              className="list-group-item list-group-item-action "
+            >
               Historial de compras
-            </a>
-            <a href="#" className="list-group-item list-group-item-action">
+            </Link>
+            <a href="/login" className="list-group-item list-group-item-action">
               Cerrar sesión
             </a>
           </div>
