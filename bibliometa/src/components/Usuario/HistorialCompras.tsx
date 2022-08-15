@@ -12,16 +12,18 @@ type Values = {
 
 function HistorialCompras() {
   const [state, setState] = useContext(AppContext);
-  const [bookData, setBookData] = useState<Values>({
-    title: "",
-    operationType: "",
-  });
+  const [bookData, setBookData] = useState<Array<Values>>([]);
+
+  // const [bookData, setBookData] = useState<Values>({
+  //   title: "",
+  //   operationType: "",
+  // });
   console.log("Alias del usuario Perfil", state);
 
   useEffect(() => {
     getBookUser(state.name).then((response) => {
       console.log(response.data);
-      //   setUserData(response.data);
+      setBookData(response.data);
     });
   }, []);
 
@@ -65,7 +67,19 @@ function HistorialCompras() {
 
         <div className="row mb-4">
           <div className="col">Libro</div>
-          <div className="col">Estado</div>
+          <div className="col">Operación</div>
+          {bookData.map((item) => {
+            return (
+              <div className="row mb-4">
+                <div key={item.title} className="col">
+                  <p>{item.title}</p>
+                </div>
+                <div className="col">
+                  <p> {item.operationType}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
