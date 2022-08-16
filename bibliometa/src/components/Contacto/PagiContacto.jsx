@@ -58,11 +58,7 @@ function PagiContacto() {
                 <div className="row mb-4">
                   <div className="col">
                     <div className="form-floating">
-                      <input
-                        className="form-control"
-                        id="floatingInput"
-                        value=""
-                      />
+                      <input className="form-control" id="floatingInput" />
                       <label>Nombre</label>
                     </div>
                   </div>
@@ -72,7 +68,6 @@ function PagiContacto() {
                       <input
                         className="form-control"
                         id="floatingInput"
-                        value=""
                         type="email"
                       />
                       <label>Email</label>
@@ -82,21 +77,13 @@ function PagiContacto() {
                 <div className="row mb-4  ">
                   <div className="col">
                     <div className="form-floating">
-                      <input
-                        className="form-control"
-                        id="floatingInput"
-                        value="-"
-                      />
+                      <input className="form-control" id="floatingInput" />
                       <label>Telefono</label>
                     </div>
                   </div>
                   <div className="col">
                     <div className="form-floating">
-                      <input
-                        className="form-control"
-                        id="floatingInput"
-                        value=""
-                      />
+                      <input className="form-control" id="floatingInput" />
                       <label>Celular</label>
                     </div>
                   </div>
@@ -104,11 +91,7 @@ function PagiContacto() {
                 <div className="row">
                   <div className="col">
                     <div className="form-floating">
-                      <textarea
-                        className="form-control"
-                        id="floatingInput"
-                        value=""
-                      />
+                      <textarea className="form-control" id="floatingInput" />
                       <label>Descripcion</label>
                     </div>
                   </div>

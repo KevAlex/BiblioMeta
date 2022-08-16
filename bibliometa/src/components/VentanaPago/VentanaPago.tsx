@@ -105,11 +105,7 @@ export function VentanaPago() {
                   <div className="row">
                     <div className="col">
                       <div className="form-floating">
-                        <input
-                          className="form-control"
-                          id="floatingInput"
-                          value=""
-                        />
+                        <input className="form-control" id="floatingInput" />
                         <label>Numero de tarjeta de credito</label>
                       </div>
                     </div>
@@ -120,11 +116,7 @@ export function VentanaPago() {
                   <div className="row">
                     <div className="col">
                       <div className="form-floating">
-                        <input
-                          className="form-control"
-                          id="floatingInput"
-                          value=""
-                        />
+                        <input className="form-control" id="floatingInput" />
                         <label>Nombre del titular</label>
                       </div>
                     </div>
@@ -135,21 +127,13 @@ export function VentanaPago() {
                   <div className="row mb-4  ">
                     <div className="col">
                       <div className="form-floating">
-                        <input
-                          className="form-control"
-                          id="floatingInput"
-                          value=""
-                        />
+                        <input className="form-control" id="floatingInput" />
                         <label>Fecha de vencimiento</label>
                       </div>
                     </div>
                     <div className="col">
                       <div className="form-floating">
-                        <input
-                          className="form-control"
-                          id="floatingInput"
-                          value=""
-                        />
+                        <input className="form-control" id="floatingInput" />
                         <label>Codigo de seguridad</label>
                       </div>
                     </div>
