@@ -97,19 +97,14 @@ export function VentanaPago() {
               </div>
             </div>
           </div>
-
-          <div className={styles.margen}>
-            <div className="d-flex flex-row">
-              <form className="" onSubmit={(e) => handleSubmit(e)}>
+          <form className="" onSubmit={(e) => handleSubmit(e)}>
+            <div className={styles.margen}>
+              <div className="d-flex flex-row">
                 <div className="container">
                   <div className="row">
                     <div className="col">
                       <div className="form-floating">
-                        <input
-                          className="form-control"
-                          id="floatingInput"
-                          value=""
-                        />
+                        <input className="form-control" id="floatingInput" />
                         <label>Numero de tarjeta de credito</label>
                       </div>
                     </div>
@@ -120,11 +115,7 @@ export function VentanaPago() {
                   <div className="row">
                     <div className="col">
                       <div className="form-floating">
-                        <input
-                          className="form-control"
-                          id="floatingInput"
-                          value=""
-                        />
+                        <input className="form-control" id="floatingInput" />
                         <label>Nombre del titular</label>
                       </div>
                     </div>
@@ -135,21 +126,13 @@ export function VentanaPago() {
                   <div className="row mb-4  ">
                     <div className="col">
                       <div className="form-floating">
-                        <input
-                          className="form-control"
-                          id="floatingInput"
-                          value=""
-                        />
+                        <input className="form-control" id="floatingInput" />
                         <label>Fecha de vencimiento</label>
                       </div>
                     </div>
                     <div className="col">
                       <div className="form-floating">
-                        <input
-                          className="form-control"
-                          id="floatingInput"
-                          value=""
-                        />
+                        <input className="form-control" id="floatingInput" />
                         <label>Codigo de seguridad</label>
                       </div>
                     </div>
@@ -162,10 +145,9 @@ export function VentanaPago() {
                     />
                   </div>
                 </div>
-              </form>
+              </div>
             </div>
-          </div>
-
+          </form>
           <br />
           <br />
         </div>

@@ -84,7 +84,7 @@ function PerfilUsuario() {
               <input
                 className="form-control"
                 id="floatingInput"
-                value={userData.birth}
+                value="15/02/1998"
               />
               <label>Fecha de nacimiento</label>
             </div>
@@ -113,24 +113,7 @@ function PerfilUsuario() {
             </div>
           </div>
         </div>
-        <div className="row mb-4  ">
-          <div className="col">
-            <div className="form-floating">
-              <input className="form-control" id="floatingInput" value="-" />
-              <label>Telefono</label>
-            </div>
-          </div>
-          <div className="col">
-            <div className="form-floating">
-              <input
-                className="form-control"
-                id="floatingInput"
-                value="+ 57 320445879"
-              />
-              <label>Celular</label>
-            </div>
-          </div>
-        </div>
+
         <div className="row">
           <h2>2. Contraseña</h2>
         </div>
