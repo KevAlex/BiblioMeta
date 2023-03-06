@@ -4,16 +4,16 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ContactoContainer from "./containers/ContactoContainer";
 
-import GrillaLibrosContainer from "./containers/GrillaLibrosContainer";
-import DetallesLibros from "./components/DetallesLibros/DetallesLibros";
-import VentanaPago from "./components/VentanaPago/VentanaPago";
+import GrillaPeliculasContainer from "./containers/GrillaPeliculasContainer";
+import DetallesPeliculas from "./components/DetallesPeliculas/DetallesPeliculas";
+import VentanaPago from "./components/VentanaPago/VentanaPago"; 
 
 function App() {
   return (
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<GrillaLibrosContainer />} />
-          <Route path="/inicio/:id" element={<DetallesLibros />} />
+          <Route path="/" element={<GrillaPeliculasContainer />} />
+          <Route path="/inicio/:id" element={<DetallesPeliculas />} />
           <Route path="/contacto" element={<ContactoContainer />} />
           <Route path="/ventanapagos" element={<VentanaPago />} />
         </Routes>

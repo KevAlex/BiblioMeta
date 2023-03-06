@@ -1,4 +1,4 @@
-.gridLibros {
+.gridPeliculas {
   display: grid;
   grid-template-columns: repeat(auto-fill, 230px);
   gap: 40px;
@@ -15,7 +15,7 @@ body{
 }
 
 @media (max-width: 560px) {
-  .gridLibros {
+  .gridPeliculas {
     grid-template-columns: 100%;
     background-color: white;
     color: white;

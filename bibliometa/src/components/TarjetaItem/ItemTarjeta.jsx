@@ -1,22 +1,21 @@
 import styles from "./ItemTarjeta.module.css";
 import { Link } from "react-router-dom";
 
-//console.log("/inicio/" + libro.id)
 
-export function ItemTarjeta({ libro }) {
-  const rutaImagen = "/" + libro.imageLink;
+export function ItemTarjeta({ pelicula }) {
+  const rutaImagen = "/" + pelicula.imageLink;
   
   return (
     <li className={styles.itemTarjeta}>
-      <Link to={"/inicio/" + libro.id}>
+      <Link to={"/inicio/" + pelicula.id}>
         <img
           width={230}
           height={345}
           className={styles.itemImagen}
           src={rutaImagen}
-          alt={libro.title}
+          alt={pelicula.title}
         />
-        <div>{libro.title}</div>
+        <div>{pelicula.title}</div>
       </Link>
     </li>
   );

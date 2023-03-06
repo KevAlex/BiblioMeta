@@ -14,12 +14,12 @@
     color: white;
 }
 
-.imagenLibro {
+.imagenPelicula {
     border-radius: 15px;
     color: white;
 }
 
-.detallesLibro {
+.detallesPelicula {
     font-size: 1.5rem;
     color: black;
 }

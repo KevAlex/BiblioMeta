@@ -1,17 +1,17 @@
-import styles from "./DetallesLibros.module.css";
-import libros from "../../informacion/libros.json";
+import styles from "./DetallesPeliculas.module.css";
+import peliculas from "../../informacion/movies.json";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import NavbarComp from "../NabvarM/NavbarComp";
 import Footer from "../Footer/footer";
 
-export function DetallesLibros() {
+export function DetallesPeliculas() {
 
   let params = useParams();
-  let xdlibro = libros.find((libro) => libro.id == params.id);
+  let xdpelicula = peliculas.find((pelicula) => pelicula.id == params.id);
 
-  const rutaImagen = "/" + xdlibro.imageLink;
+  const rutaImagen = "/" + xdpelicula.imageLink;
   //console.log(rutaImagen);
 
   return (
@@ -23,38 +23,37 @@ export function DetallesLibros() {
         <div>
           <div className={styles.contenedorDetalles}>
             <img
-              className={styles.col + " " + styles.imagenLibro}
+              className={styles.col + " " + styles.imagenPelicula}
               src={rutaImagen}
-              alt={xdlibro.title}
+              alt={xdpelicula.title}
             />
-            <div className={styles.col + " " + styles.detallesLibro}>
+            <div className={styles.col + " " + styles.detallesPelicula}>
               <p className="text-black">
-                <strong>Titulo:</strong> {xdlibro.title}
+                <strong>Titulo:</strong> {xdpelicula.title}
               </p>
               <p className="text-black">
-                <strong>Autor:</strong> {xdlibro.author}
+                <strong>Autor:</strong> {xdpelicula.author}
               </p>
               <p className="text-black">
-                <strong>Idioma:</strong> {xdlibro.language}
+                <strong>Idioma:</strong> {xdpelicula.language}
               </p>
               <p className="text-black">
-                <strong>Año:</strong> {xdlibro.year}
+                <strong>Año:</strong> {xdpelicula.year}
               </p>
               <p className="text-black">
-                <strong>Precio:</strong> {xdlibro.precio}
+                <strong>Precio:</strong> {xdpelicula.precio}
               </p>
 
-              {/* <Prueba libro = {xdlibro}/> */}
 
-              {xdlibro.alquiler === "si" ? (
-                <Link to={"/ventanapagos"} libro={xdlibro}>
+              {xdpelicula.alquiler === "si" ? (
+                <Link to={"/ventanapagos"} pelicula={xdpelicula}>
                   <Button variant="success">Alquilar</Button>
                 </Link>
               ) : (
                 <></>
               )}
-              {xdlibro.venta === "si" ? (
-                <Link to={"/ventanapagos"} libro={xdlibro}>
+              {xdpelicula.venta === "si" ? (
+                <Link to={"/ventanapagos"} pelicula={xdpelicula}>
                   <Button variant="info">Comprar</Button>
                 </Link>
               ) : (
@@ -75,4 +74,4 @@ export function DetallesLibros() {
   );
 }
 
-export default DetallesLibros;
+export default DetallesPeliculas;

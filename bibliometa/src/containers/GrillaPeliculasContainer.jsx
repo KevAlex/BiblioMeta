@@ -1,4 +1,4 @@
-import { GridLibros } from "../components/GrillaLibros/GridLibros";
+import { GridPeliculas } from "../components/GrillaPeliculas/GridPeliculas";
 import NavbarComp from "../components/NabvarM/NavbarComp";
 import Footer from "../components/Footer/footer";
 import Buscar from "../components/BuscarElemento/Buscar";
@@ -8,7 +8,7 @@ function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
-export function GrillaLibrosContainer() {
+export function GrillaPeliculasContainer() {
   const query = useQuery();
   const search = query.get("search");
   console.log(search);
@@ -19,7 +19,7 @@ export function GrillaLibrosContainer() {
       </header>
       <main>
         <Buscar />
-        <GridLibros />
+        <GridPeliculas />
       </main>
       <footer>
         <Footer />
@@ -28,4 +28,4 @@ export function GrillaLibrosContainer() {
   );
 }
 
-export default GrillaLibrosContainer;
+export default GrillaPeliculasContainer;
