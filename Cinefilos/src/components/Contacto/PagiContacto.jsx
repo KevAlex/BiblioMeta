@@ -1,5 +1,5 @@
 import styles from "./PagiContacto.module.css";
-import Logo_img from "../../images/Lectores.png";
+import Lectores_imagen from "../../images/Lectores.png";
 import NavbarComp from "../NabvarM/NavbarComp";
 import Footer from "../Footer/footer";
 import Button from "../Button/Button";
@@ -19,8 +19,8 @@ function PagiContacto() {
                 <div className="row mb-4">
                   <div className="col">
                     <img
-                      src={Logo_img}
-                      alt="Bibliometa logo"
+                      src={Lectores_imagen}
+                      alt="Lectores"
                       className={styles.imagen}
                     />
                   </div>

@@ -15,12 +15,12 @@ const Footer = () => {
         <h1
           style={{ color: "#93AD54", textAlign: "center", marginTop: "-30px" }}
         >
-          BiblioMeta
+          Cinefilos
         </h1>
         <Container>
           <Row>
             <Column>
-              <Heading>Acerca de BiblioMeta</Heading>
+              <Heading>Acerca de Cinefilos</Heading>
               <FooterLink href="#">Misión</FooterLink>
               <FooterLink href="#">Visión</FooterLink>
             </Column>
@@ -32,7 +32,7 @@ const Footer = () => {
             </Column>
             <Column>
               <Heading>Contacto</Heading>
-              <FooterLink href="#">Universidad Distrital</FooterLink>
+              <FooterLink href="#">Red de cines Colombia</FooterLink>
             </Column>
             <Column>
               <Heading>Redes sociales</Heading>

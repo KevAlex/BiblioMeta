@@ -39,7 +39,7 @@ export function VentanaPago() {
                     <div>
                       <br />
                       <h1 className={styles.titulo}>
-                        Módulo de pagos BiblioMeta
+                        Módulo de pagos Cinefilos
                       </h1>
                       <h1 className={styles.titulo}>-</h1>
                       <h1 className={styles.texto}>

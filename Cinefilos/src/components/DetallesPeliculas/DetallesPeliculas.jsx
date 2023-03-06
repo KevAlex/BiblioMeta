@@ -9,7 +9,7 @@ import Footer from "../Footer/footer";
 export function DetallesPeliculas() {
 
   let params = useParams();
-  let xdpelicula = peliculas.find((pelicula) => pelicula.id == params.id);
+  let xdpelicula = peliculas.find((pelicula) => pelicula.id === params.id);
 
   const rutaImagen = "/" + xdpelicula.imageLink;
   //console.log(rutaImagen);
