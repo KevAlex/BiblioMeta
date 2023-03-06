@@ -4,38 +4,16 @@ import NavbarComp from "../NabvarM/NavbarComp";
 import Footer from "../Footer/footer";
 import tarjetas from "../../images/TarjetasCredito.png";
 import Button from "../Button/Button";
-import React, { ChangeEvent, FormEvent, useContext, useState } from "react";
-import { Navigate } from "react-router-dom";
+import {FormEvent} from "react";
 
-import { Link } from "react-router-dom";
-import { AppContext } from "../../services/ReferenceDataContext";
-import { postBookUser } from "../../services/LibraryServices";
+
 
 export function VentanaPago() {
-  // console.log("salida");
-  // console.log("info recogida: " + libro);
-  // console.log("termino");
-  const { user, books } = useContext(AppContext);
-  const [state, setState] = user;
-  const [data, setData] = books;
-  const [loginStatus, setLoginStatus] = useState(0);
 
-  console.log(data);
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    postBookUser(state.name, data).then((response) => {
-      console.log(response);
-      setLoginStatus(response.status);
-    });
   };
-  if (loginStatus === 200) {
-    alert("El pago fue exitoso");
-    return <Navigate to="/" />;
-  } else if (loginStatus === 204) {
-    alert("La compra no pudo ser efectuada");
-    setLoginStatus(0);
-  }
+
 
   return (
     <div>

@@ -3,25 +3,16 @@ import libros from "../../informacion/libros.json";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { AppContext } from "../../services/ReferenceDataContext";
-import { useContext } from "react";
 import NavbarComp from "../NabvarM/NavbarComp";
 import Footer from "../Footer/footer";
 
 export function DetallesLibros() {
-  //const rutaImagen = "/" + libroinf.imageLink;
-  const { books } = useContext(AppContext);
-  const [data, setData] = books;
 
   let params = useParams();
   let xdlibro = libros.find((libro) => libro.id == params.id);
 
   const rutaImagen = "/" + xdlibro.imageLink;
-
-  setData(xdlibro);
   //console.log(rutaImagen);
-
-  //Estudiar funcion ternaria vagos :*
 
   return (
     <div>

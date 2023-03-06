@@ -1,22 +1,13 @@
-import React, { Component } from "react";
-//import { Link } from "react-router-dom";
-
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { AppContext } from "../../services/ReferenceDataContext";
-import { useContext } from "react";
+
 import { Link } from "react-router-dom";
 
 //<img src="./Logo horizontal.png" width="200px"/>
 
 export default function NavbarComp() {
-  const { user } = useContext(AppContext);
-  const [state, setState] = user;
-  console.log("Alias del usuario Navbar", state.name);
+
   return (
     <div>
       <Navbar bg="black" variant={"dark"} expand="lg">
@@ -50,7 +41,7 @@ export default function NavbarComp() {
               </Link>
               {/* <Nav.Link href="/contacto"></Nav.Link> */}
             </Nav>
-            <p className="text-white mt-2"> Bienvenido {state.name}! </p>
+            <p className="text-white mt-2"> Bienvenido </p>
             {/* <Form className="d-flex">
               <Form.Control
                 type="search"

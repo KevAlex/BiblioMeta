@@ -5,10 +5,7 @@ import Footer from "../Footer/footer";
 import Button from "../Button/Button";
 
 function PagiContacto() {
-  // const { currentUser } = useContext(AuthContext);
-  // if (!currentUser) {
-  //   return <Navigate to="/login" />;
-  // }
+
   return (
     <div>
       <header>
