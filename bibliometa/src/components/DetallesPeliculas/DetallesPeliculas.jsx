@@ -32,13 +32,13 @@ export function DetallesPeliculas() {
                 <strong>Titulo:</strong> {xdpelicula.title}
               </p>
               <p className="text-black">
-                <strong>Autor:</strong> {xdpelicula.author}
+                <strong>Idioma Original:</strong> {xdpelicula.original_language}
               </p>
               <p className="text-black">
-                <strong>Idioma:</strong> {xdpelicula.language}
+                <strong>Fecha de lanzamiento:</strong> {xdpelicula.release_date}
               </p>
               <p className="text-black">
-                <strong>Año:</strong> {xdpelicula.year}
+                <strong>Popularidad:</strong> {xdpelicula.popularity}
               </p>
               <p className="text-black">
                 <strong>Precio:</strong> {xdpelicula.precio}

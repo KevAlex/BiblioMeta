@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 
 export function ItemTarjeta({ pelicula }) {
-  const rutaImagen = "/" + pelicula.imageLink;
+  const rutaImagen = "https://image.tmdb.org/t/p/w300"+pelicula.poster_path;
   
   return (
     <li className={styles.itemTarjeta}>
